@@ -1,0 +1,61 @@
+.buttons {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+
+	> button {
+		padding: 0px;
+
+		> svg {
+			transition: opacity 0.2s ease-in-out;
+			font-size: 60px;
+			color: white;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				> svg {
+					opacity: 0.75;
+				}
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				> svg {
+					opacity: 0.75;
+				}
+			}
+		}
+	}
+}
+
+.buttons_small {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	> button {
+		padding: 0px;
+
+		> svg {
+			transition: opacity 0.2s ease-in-out;
+			font-size: 60px;
+			color: white;
+		}
+		@media (hover: hover) {
+			&:hover {
+				> svg {
+					opacity: 0.75;
+				}
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				> svg {
+					opacity: 0.75;
+				}
+			}
+		}
+	}
+}

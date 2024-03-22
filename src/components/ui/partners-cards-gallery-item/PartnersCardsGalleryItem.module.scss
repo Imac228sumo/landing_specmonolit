@@ -1,0 +1,51 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/animations';
+
+.item {
+	aspect-ratio: 9 / 9;
+
+	> div {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 7.2px; //5.93
+
+		img {
+			position: relative !important;
+			width: 41.5% !important;
+			height: 41.5% !important;
+		}
+
+		.title {
+			font-family: var(--font-family);
+			font-weight: 600;
+			font-size: 17px; //13 11
+			line-height: 112%;
+			color: #000;
+
+			@media (max-width: 998px) {
+				font-size: calc(13px + (4 + 4 * 1.521) * ((100vw - 600px) / 998));
+			}
+
+			@media (max-width: 600px) {
+				font-size: 22px;
+			}
+
+			@media (max-width: 599px) {
+				font-size: calc(13px + (9 + 9 * 4.0336) * ((100vw - 480px) / 599));
+			}
+
+			@media (max-width: 480px) {
+				font-size: calc(11px + (2 + 2 * 3) * ((100vw - 360px) / 480));
+			}
+
+			@media (max-width: 360px) {
+				font-size: 11px;
+			}
+		}
+	}
+}

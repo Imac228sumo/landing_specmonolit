@@ -1,0 +1,105 @@
+.wrapper {
+	margin-top: 46px;
+	@media (max-width: 1280px) {
+		margin-top: calc(40px + (6 + 6 * 3.539) * ((100vw - 998px) / 1280));
+	}
+
+	@media (max-width: 890px) {
+		display: none;
+	}
+
+	.content {
+		max-width: 1160px;
+		margin-left: auto;
+		margin-right: auto;
+		height: 100%;
+
+		@media (max-width: 1280px) {
+			margin-left: calc(50px + (10 + 10 * 3.539) * ((100vw - 998px) / 1280));
+			margin-right: calc(50px + (10 + 10 * 3.539) * ((100vw - 998px) / 1280));
+		}
+
+		.container {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			gap: 10px;
+
+			> section:first-child {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				width: 450px;
+				@media (max-width: 1280px) {
+					width: calc(330px + (120 + 120 * 3.539) * ((100vw - 998px) / 1280));
+				}
+
+				> section:first-child {
+					width: 100px;
+					> span {
+						width: 100%;
+						margin-right: 30px;
+						font-family: var(--font-raleway);
+						font-weight: 500;
+						font-size: 130px;
+						color: #000;
+
+						@media (max-width: 1280px) {
+							font-size: calc(
+								100px + (30 + 30 * 3.539) * ((100vw - 998px) / 1280)
+							);
+							margin-right: calc(
+								22px + (4 + 4 * 3.539) * ((100vw - 998px) / 1280)
+							);
+						}
+					}
+				}
+
+				> section:last-child {
+					display: grid;
+					column-gap: 10px;
+					row-gap: 10px;
+					grid-template-columns: repeat(1, 1fr);
+
+					width: 290px;
+
+					@media (max-width: 1280px) {
+						width: calc(204px + (86 + 86 * 3.539) * ((100vw - 998px) / 1280));
+					}
+				}
+			}
+
+			> section:last-child {
+				display: grid;
+				row-gap: 10px;
+				column-gap: 10px;
+				grid-template-columns: repeat(2, 1fr);
+				width: 700px;
+
+				> div:last-child,
+				> div:nth-child(2) {
+					width: 360px;
+				}
+
+				> div:first-child,
+				> div:nth-child(3) {
+					width: 330px;
+				}
+
+				@media (max-width: 1280px) {
+					width: calc(558px + (142 + 142 * 3.539) * ((100vw - 998px) / 1280));
+					> div:first-child,
+					> div:nth-child(3) {
+						width: calc(260px + (70 + 70 * 3.539) * ((100vw - 998px) / 1280));
+					}
+
+					> div:last-child,
+					> div:nth-child(2) {
+						//360
+						width: calc(288px + (72 + 72 * 3.539) * ((100vw - 998px) / 1280));
+					}
+				}
+			}
+		}
+	}
+}

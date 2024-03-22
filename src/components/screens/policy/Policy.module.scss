@@ -1,0 +1,49 @@
+.wrapper {
+	.container {
+		@media (min-width: 981px) {
+			padding: 4% 0;
+		}
+
+		> div {
+			@media (max-width: 981px) {
+				padding: 2% 0;
+			}
+
+			width: 80%;
+			max-width: 1080px;
+			margin: auto;
+			position: relative;
+
+			> div {
+				> h1 {
+					word-wrap: break-word;
+					width: 100%;
+					margin-top: 0px;
+
+					@media (max-width: 600px) {
+						font-size: 26px;
+					}
+				}
+				> div {
+					h1 {
+						font-size: 30px;
+						@media (max-width: 600px) {
+							font-size: 26px;
+						}
+					}
+					h1,
+					h2,
+					h3,
+					h4,
+					h5,
+					h6 {
+						color: #333;
+						padding-bottom: 10px;
+						line-height: 1em;
+						font-weight: 500;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,89 @@
+.wrapper {
+	margin-top: 76px;
+
+	@media (max-width: 1280px) {
+		margin-top: calc(40px + (26 + 26 * 3.539) * ((100vw - 998px) / 1280));
+	}
+
+	@media (max-width: 998px) {
+		margin-top: calc(30px + (10 + 10 * 0.92664) * ((100vw - 480px) / 998));
+	}
+
+	.content {
+		max-width: 1160px;
+		margin-left: auto;
+		margin-right: auto;
+		height: 100%;
+
+		@media (max-width: 1280px) {
+			margin-left: calc(50px + (10 + 10 * 3.539) * ((100vw - 998px) / 1280));
+			margin-right: calc(50px + (10 + 10 * 3.539) * ((100vw - 998px) / 1280));
+		}
+
+		@media (max-width: 998px) {
+			margin-left: calc(30px + (20 + 20 * 0.92664) * ((100vw - 480px) / 998));
+			margin-right: calc(30px + (20 + 20 * 0.92664) * ((100vw - 480px) / 998));
+		}
+
+		@media (max-width: 480px) {
+			margin-left: calc(10px + (20 + 20 * 3) * ((100vw - 360px) / 480));
+			margin-right: calc(10px + (20 + 20 * 3) * ((100vw - 360px) / 480));
+		}
+
+		@media (max-width: 360px) {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+		> div:first-child > h5 {
+			margin: 0px;
+			font-family: var(--font-raleway);
+			font-weight: 700;
+			font-size: 24px;
+
+			@media (max-width: 1280px) {
+				font-size: calc(20px + (4 + 4 * 3.539) * ((100vw - 998px) / 1280));
+			}
+
+			@media (max-width: 998px) {
+				font-size: 20px;
+			}
+
+			line-height: 30px;
+			text-transform: uppercase;
+			color: #000;
+		}
+
+		> div:last-child > p {
+			margin-top: 6px;
+			text-indent: 39.66%;
+			font-family: var(--font-raleway);
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 32px;
+			color: #000;
+			> b {
+				font-weight: 600;
+				color: #0064fa;
+			}
+
+			@media (max-width: 1280px) {
+				text-indent: 0%;
+				margin-top: calc(12px + (6 + 6 * 3.539) * ((100vw - 998px) / 1280));
+				font-size: calc(16px + (2 + 2 * 3.539) * ((100vw - 998px) / 1280));
+			}
+
+			@media (max-width: 998px) {
+				font-size: calc(18px + (-2 + -2 * 0.92664) * ((100vw - 480px) / 998));
+			}
+
+			@media (max-width: 480px) {
+				font-size: calc(16px + (2 + 2 * 3) * ((100vw - 360px) / 480));
+			}
+
+			@media (max-width: 360px) {
+				font-size: 16px;
+			}
+		}
+	}
+}

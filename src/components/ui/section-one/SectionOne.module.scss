@@ -1,0 +1,188 @@
+.wrapper {
+	.content {
+		max-width: 1160px;
+		margin-left: auto;
+		margin-right: auto;
+		height: 190px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@media (max-width: 1280px) {
+			margin-left: calc(50px + (10 + 10 * 3.539) * ((100vw - 998px) / 1280));
+			margin-right: calc(50px + (10 + 10 * 3.539) * ((100vw - 998px) / 1280));
+			height: calc(173px + (17 + 17 * 3.539) * ((100vw - 998px) / 1280));
+		}
+
+		@media (max-width: 998px) {
+			margin-left: calc(30px + (20 + 20 * 0.92664) * ((100vw - 480px) / 998));
+			margin-right: calc(30px + (20 + 20 * 0.92664) * ((100vw - 480px) / 998));
+			height: 190px;
+		}
+
+		@media (max-width: 480px) {
+			margin-left: calc(10px + (20 + 20 * 3) * ((100vw - 360px) / 480));
+			margin-right: calc(10px + (20 + 20 * 3) * ((100vw - 360px) / 480));
+			height: calc(165px + (25 + 25 * 3) * ((100vw - 360px) / 480));
+		}
+
+		@media (max-width: 360px) {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+		> div:first-child {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin-top: 29px;
+			margin-left: 1px;
+
+			@media (max-width: 1280px) {
+				margin-top: calc(0px + (29 + 29 * 3.539) * ((100vw - 998px) / 1280));
+			}
+
+			> h5 {
+				margin: 0px;
+				font-family: var(--font-raleway);
+				font-weight: 400;
+				font-size: 19px;
+				letter-spacing: 0.5em;
+				text-transform: uppercase;
+				color: #000;
+
+				@media (max-width: 1280px) {
+					font-size: calc(13px + (6 + 6 * 3.539) * ((100vw - 998px) / 1280));
+				}
+			}
+			> h1 {
+				font-weight: 500;
+				font-size: 56px;
+				letter-spacing: 0.04em;
+				text-transform: uppercase;
+				color: #000;
+				margin: 0;
+				color: #0064fa;
+				font-family: var(--font-manrope);
+				text-transform: uppercase;
+
+				@media (max-width: 1280px) {
+					font-size: calc(39px + (17 + 17 * 3.539) * ((100vw - 998px) / 1280));
+				}
+
+				> b {
+					font-weight: 500;
+					color: #000000;
+				}
+			}
+		}
+
+		> div:nth-child(2) {
+			margin-top: 24px;
+			margin-right: 44px;
+			width: 200px;
+			@media (max-width: 1280px) {
+				margin-top: 20px;
+				margin-right: calc(10px + (34 + 34 * 3.539) * ((100vw - 998px) / 1280));
+			}
+
+			> h5 {
+				margin: 0px;
+				font-family: var(--font-raleway);
+				font-weight: 500;
+				font-size: 18px;
+				letter-spacing: 0.04em;
+				text-transform: uppercase;
+				color: #000;
+				line-height: 31px;
+			}
+		}
+
+		> div:last-child {
+			> div {
+				cursor: pointer;
+				margin-top: 3px;
+				display: flex;
+				flex-direction: column;
+				gap: 4px;
+
+				@media (max-width: 1280px) {
+					margin-top: calc(20px + (17 + 17 * 3.539) * ((100vw - 998px) / 1280));
+				}
+				> span {
+					display: flex;
+					align-items: center;
+					gap: 19px;
+					> h4 {
+						line-height: 40px;
+						margin: 0px;
+						font-family: var(--font-raleway);
+						font-weight: 600;
+						font-size: 22px;
+						letter-spacing: 0.04em;
+						text-transform: uppercase;
+						color: #000;
+					}
+				}
+				> p {
+					line-height: 22px;
+					margin: 0px;
+					font-family: var(--font-raleway);
+					font-weight: 400;
+					font-size: 16px;
+					letter-spacing: 0.02em;
+					color: #000;
+				}
+			}
+		}
+
+		@media (max-width: 890px) {
+			flex-direction: column;
+			gap: 8px;
+			justify-content: center;
+
+			> div:first-child {
+				margin-top: 24px;
+				display: flex;
+				align-items: center;
+				width: 100%;
+				margin-left: 0px;
+				> h5 {
+					text-align: center;
+					font-size: 12px;
+					letter-spacing: 0.48em;
+				}
+				> h1 {
+					text-align: center;
+					font-size: 36px;
+					letter-spacing: 0.04em;
+				}
+			}
+
+			> div:nth-child(2) {
+				display: flex;
+				align-items: center;
+				width: 100%;
+				margin: 0px;
+				margin-bottom: 37px;
+
+				> h5 {
+					width: 100%;
+					text-align: center;
+					line-height: 28px;
+				}
+			}
+
+			> div:last-child {
+				display: none;
+			}
+		}
+
+		@media (max-width: 480px) {
+			> div:nth-child(2) {
+				width: 340px;
+				margin-bottom: calc(12px + (25 + 25 * 3) * ((100vw - 360px) / 480));
+			}
+		}
+	}
+}

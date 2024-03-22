@@ -1,0 +1,92 @@
+@import '@/assets/styles/variables';
+@import '@/assets/styles/animations';
+
+.item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	overflow: hidden;
+	height: 160px;
+	background-color: #222;
+
+	@media (max-width: 1280px) {
+		height: calc(130px + (30 + 30 * 3.539) * ((100vw - 998px) / 1280));
+	}
+
+	p {
+		margin: 0px;
+	}
+
+	> button {
+		cursor: pointer;
+		padding: 10px;
+		background-color: transparent;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		height: 100%;
+		width: 100%;
+
+		> div:first-child {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			margin: 10px;
+		}
+
+		> p {
+			font-family: var(--font-raleway);
+			font-weight: 400;
+			font-size: 20px;
+			line-height: 24px;
+			color: #fff;
+		}
+	}
+
+	&.notBlack {
+		background-color: transparent;
+		border: 2px solid #000;
+		> button {
+			> p {
+				font-family: var(--font-raleway);
+				font-weight: 600;
+				font-size: 20px;
+				line-height: 24px;
+				color: #1a181b;
+			}
+		}
+	}
+
+	&.notActive {
+		background-color: transparent;
+		border: none;
+		> button {
+			cursor: default;
+			padding-left: 0px;
+			justify-content: flex-start;
+			> p {
+				font-family: var(--font-raleway);
+				font-weight: 700;
+				font-size: 20px;
+				line-height: 24px;
+				text-transform: uppercase;
+				color: #000;
+			}
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				transform: translateY(0px);
+			}
+		}
+
+		@media (hover: none) {
+			&:active {
+				transform: translateY(0px);
+			}
+		}
+	}
+}

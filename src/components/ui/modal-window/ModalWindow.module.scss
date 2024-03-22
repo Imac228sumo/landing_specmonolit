@@ -1,0 +1,113 @@
+.modal_container {
+	padding: 20px 20px 22px 20px;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	border-radius: 4px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+
+	.modal_header {
+		background-color: transparent;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		> span {
+			font-family: var(--font-raleway);
+			font-weight: 600;
+			font-size: 20px;
+			line-height: 140%;
+			color: #000;
+		}
+		> button {
+			align-self: flex-start;
+			cursor: pointer;
+			background: transparent;
+			padding: 0;
+		}
+	}
+	.modal_content {
+		margin-top: 4px;
+		height: 100%;
+		background: #fff;
+		display: flex;
+		flex-direction: column;
+
+		.form {
+			margin-bottom: 10px;
+
+			.inputField {
+				font-family: var(--font-raleway);
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 169%;
+				color: #202020;
+			}
+
+			.inputLabel {
+				font-family: var(--font-raleway);
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 169%;
+				color: rgba(32, 32, 32, 0.8);
+			}
+
+			&.error {
+				margin-bottom: -8px;
+			}
+		}
+
+		> div:last-child {
+			font-family: var(--font-raleway);
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 157%;
+			color: #444242;
+		}
+	}
+	.modal_footer {
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		> button {
+			width: 100%;
+			padding: 10px 65px;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 4px;
+			background-color: #0064faad;
+			opacity: 0.8;
+			border-radius: 2px;
+			font-family: var(--font-raleway);
+			font-weight: 600;
+			font-size: 16px;
+			color: #fff;
+
+			&.active {
+				background-color: #0064fa;
+			}
+
+			&.loading {
+				padding-top: 6px;
+				padding-bottom: 6px;
+				> span {
+					position: relative;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					height: 100%;
+					width: 100%;
+					color: white;
+					> span {
+						width: 36px !important;
+						height: 36px !important;
+					}
+				}
+			}
+		}
+	}
+}

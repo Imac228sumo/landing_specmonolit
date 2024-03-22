@@ -1,0 +1,101 @@
+@import './variables';
+// @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-variant-numeric: lining-nums proportional-nums;
+}
+
+*,
+*::before,
+*::after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+::-webkit-input-placeholder {
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+} /* Chrome <=56, Safari < 10 */
+:-moz-placeholder {
+	opacity: 1;
+	-moz-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+} /* FF 4-18 */
+::-moz-placeholder {
+	opacity: 1;
+	-moz-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+} /* FF 19-51 */
+:-ms-input-placeholder {
+	opacity: 1;
+	-ms-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+} /* IE 10+ */
+::placeholder {
+	opacity: 1;
+	transition: opacity 0.5s;
+} /* Modern Browsers */
+
+*:focus::-webkit-input-placeholder {
+	opacity: 0;
+} /* Chrome <=56, Safari < 10 */
+*:focus:-moz-placeholder {
+	opacity: 0;
+} /* FF 4-18 */
+*:focus::-moz-placeholder {
+	opacity: 0;
+} /* FF 19-50 */
+*:focus:-ms-input-placeholder {
+	opacity: 0;
+} /* IE 10+ */
+*:focus::placeholder {
+	opacity: 0;
+} /* Modern Browsers */
+
+button,
+input,
+textarea {
+	font-family: inherit;
+	outline: none;
+	border: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+::-webkit-scrollbar {
+	height: 0.5rem !important;
+	width: 0.5rem !important;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+	background-color: #616161;
+}
+.dark ::-webkit-scrollbar-thumb {
+	background-color: hsla(0, 0%, 100%, 0.1);
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: #616161;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #929292;
+	border-color: rgba(255, 255, 255, 1);
+	border-radius: 9999px;
+	border-width: 1px;
+}
+::-webkit-scrollbar-track {
+	background-color: transparent;
+	border-radius: 9999px;
+}
+
+:root {
+	--heading-height: 78px;
+	--heading-mobile-height: 72px;
+}

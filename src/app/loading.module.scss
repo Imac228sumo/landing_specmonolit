@@ -1,0 +1,29 @@
+.loader {
+	position: absolute;
+	top: 50vh;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 100%;
+	width: 100%;
+
+	display: grid;
+	place-content: center;
+	background-color: #ffffff;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+
+	> div {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		gap: 16px;
+
+		> div {
+			height: 3rem;
+			width: 0.5rem;
+			background-color: black;
+		}
+	}
+}
