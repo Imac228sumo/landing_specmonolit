@@ -87,7 +87,12 @@ export default function MobileMenu() {
 						style={{ marginTop: headerHeight - scrollHeight }}
 					></div>
 					<div ref={ref} className={styles.mobile_menu}>
-						<Hamburger toggled={isOpen} size={24} toggle={setOpen} />
+						<Hamburger
+							label='Навигация'
+							toggled={isOpen}
+							size={24}
+							toggle={setOpen}
+						/>
 						<AnimatePresence mode='wait'>
 							{isOpen && (
 								<motion.div
@@ -125,7 +130,11 @@ export default function MobileMenu() {
 														animate='enter'
 														exit='exit'
 													>
-														<button onClick={() => closAndRoute(route.href)}>
+														<button
+															role={'button'}
+															aria-label={route.title}
+															onClick={() => closAndRoute(route.href)}
+														>
 															{' '}
 															{route.title}
 														</button>
@@ -153,6 +162,8 @@ export default function MobileMenu() {
 												exit='exit'
 											>
 												<a
+													role={'link'}
+													aria-label={'Номер телефона для связи'}
 													href={`tel:${getPhone()}`}
 													onClick={() => setOpen(false)}
 												>
@@ -172,6 +183,8 @@ export default function MobileMenu() {
 												exit='exit'
 											>
 												<a
+													role={'link'}
+													aria-label={'Адрес почты для связи'}
 													href={`mailto:${getEmail()}`}
 													onClick={() => setOpen(false)}
 												>
@@ -198,6 +211,8 @@ export default function MobileMenu() {
 											>
 												<div>
 													<a
+														role={'link'}
+														aria-label={'Адрес телеграм для связи'}
 														href={getTelegram() || ''}
 														onClick={() => setOpen(false)}
 													>
@@ -206,6 +221,8 @@ export default function MobileMenu() {
 												</div>
 												<div>
 													<a
+														role={'link'}
+														aria-label={'Адрес мэил для связи'}
 														href={`mailto:${getEmail()}`}
 														onClick={() => setOpen(false)}
 													>
@@ -214,6 +231,8 @@ export default function MobileMenu() {
 												</div>
 												<div>
 													<a
+														role={'link'}
+														aria-label={'Адрес инстаграм для связи'}
 														href={getInstagram() || ''}
 														onClick={() => setOpen(false)}
 													>

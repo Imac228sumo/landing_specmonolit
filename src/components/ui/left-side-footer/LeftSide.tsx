@@ -11,7 +11,13 @@ export default function LeftSide() {
 				<h3>СпецМОНОЛИТ</h3>
 			</section>
 			<section>
-				<Link href='/policy'>Политика конфиденциальности</Link>
+				<Link
+					role='link'
+					aria-label='Политика конфиденциальности'
+					href='/policy'
+				>
+					Политика конфиденциальности
+				</Link>
 				<span>ИП Самолов С.C</span>
 			</section>
 		</section>

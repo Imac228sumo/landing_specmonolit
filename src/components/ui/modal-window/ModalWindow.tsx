@@ -88,7 +88,11 @@ export default function ModalWindow({
 				<div className={styles.modal_container}>
 					<div className={styles.modal_header}>
 						<span>Оставьте заявку на обратный звонок!</span>
-						<button onClick={handleCloseAndReset}>
+						<button
+							role={'button'}
+							aria-label='Закрыть модальное окно'
+							onClick={handleCloseAndReset}
+						>
 							<CloseRoundSvg color='black' opacity='0.8' />
 						</button>
 					</div>
@@ -218,6 +222,8 @@ export default function ModalWindow({
 					</div>
 					<div className={styles.modal_footer}>
 						<LoadingButton
+							role={'button'}
+							aria-label='Отправить заявку'
 							disabled={!name || isErrorPhone || isErrorEmail}
 							onClick={handleSendMessage}
 							loading={isLoading}

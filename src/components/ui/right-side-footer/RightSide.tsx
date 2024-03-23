@@ -1,7 +1,5 @@
 'use client'
 
-import Link from 'next/link'
-
 import styles from './RightSide.module.scss'
 import InstagramLogoSvg from '@/components/elements/instagram-logo-svg/InstagramLogoSvg'
 import MailLogoSvg from '@/components/elements/mail-logo-svg/MailLogoSvg'
@@ -22,23 +20,49 @@ export default function RightSide() {
 				<h3>Навигация</h3>
 				<ul>
 					<li>
-						<button onClick={() => scrollTo('section_five')}>Услуги</button>
-					</li>
-					<li>
-						<button onClick={() => scrollTo('section_three')}>
-							О Компании
+						<button
+							role={'button'}
+							aria-label='Услуги'
+							onClick={() => scrollTo('section_five')}
+						>
+							Услуги
 						</button>
 					</li>
 					<li>
-						<button onClick={() => scrollTo('section_six')}>Проекты</button>
+						<button
+							role={'button'}
+							aria-label='О компании'
+							onClick={() => scrollTo('section_three')}
+						>
+							О компании
+						</button>
 					</li>
 					<li>
-						<button onClick={() => scrollTo('section_seven')}>
+						<button
+							role={'button'}
+							aria-label='Проекты'
+							onClick={() => scrollTo('section_six')}
+						>
+							Проекты
+						</button>
+					</li>
+					<li>
+						<button
+							role={'button'}
+							aria-label='Калькулятор'
+							onClick={() => scrollTo('section_seven')}
+						>
 							Калькулятор
 						</button>
 					</li>
 					<li>
-						<button onClick={() => scrollTo('section_eight')}>Партнеры</button>
+						<button
+							role={'button'}
+							aria-label='Партнеры'
+							onClick={() => scrollTo('section_eight')}
+						>
+							Партнеры
+						</button>
 					</li>
 				</ul>
 			</section>
@@ -46,34 +70,44 @@ export default function RightSide() {
 				<h3>Контакты</h3>
 				<ul>
 					<li>
-						<a href={`tel:${getPhone()}`}>
+						<a
+							role={'link'}
+							aria-label='Номер телефона'
+							href={`tel:${getPhone()}`}
+						>
 							<div>Тел: </div>
 							<div> {formattedPhone(getPhone() || '') || 'не доступно'}</div>
 						</a>
 					</li>
 					<li>
-						<a href={`mailto:${getEmail()}`}>
+						<a
+							role={'link'}
+							aria-label='Адрес почты'
+							href={`mailto:${getEmail()}`}
+						>
 							<div>Почта: </div>
 							<div> {getEmail() || 'не доступно'}</div>
 						</a>
 					</li>
 					<li>
-						<a href=''>Cоциальные сети:</a>
+						<a aria-label='Cоциальные сети' href=''>
+							Cоциальные сети:
+						</a>
 					</li>
 				</ul>
 				<ul>
 					<li>
-						<Link href={getTelegram() || ''}>
+						<a role={'link'} aria-label='Телеграм' href={getTelegram() || ''}>
 							<TelegramLogoSvg />
-						</Link>
+						</a>
 					</li>
 					<li>
-						<a href={`mailto:${getEmail()}`}>
+						<a role={'link'} aria-label='Почта' href={`mailto:${getEmail()}`}>
 							<MailLogoSvg />
 						</a>
 					</li>
 					<li>
-						<a href={getInstagram() || ''}>
+						<a role={'link'} aria-label='Инстаграм' href={getInstagram() || ''}>
 							<InstagramLogoSvg />
 						</a>
 					</li>

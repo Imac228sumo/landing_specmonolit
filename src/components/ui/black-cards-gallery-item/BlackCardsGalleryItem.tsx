@@ -30,7 +30,7 @@ const BlackCardsGalleryItem = forwardRef<
 			whileHover='hover'
 			whileTap={'tap'}
 		>
-			<button>
+			<button role={'button'} aria-label={item.title}>
 				<div>
 					<ArrowMediumSvg
 						color={item.isActive ? (item.isBlack ? 'white' : '#000') : 'white'}

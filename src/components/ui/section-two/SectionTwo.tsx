@@ -39,6 +39,8 @@ export default function SectionTwo({ handleOpen }: { handleOpen: () => void }) {
 					</div>
 					<motion.div custom={7} variants={textAnimationBottom}>
 						<motion.button
+							role={'button'}
+							aria-label='Рассчитать стоимость'
 							onClick={() => scrollTo('section_seven')}
 							variants={buttonAnimation}
 							whileHover={'hover'}

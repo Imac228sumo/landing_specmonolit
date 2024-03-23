@@ -94,11 +94,17 @@ export default function NavBar() {
 						value={value}
 						onChange={handleChange}
 						aria-label='navigation'
+						role={'navigation'}
 						className={styles.custom_tabs}
 					>
 						{routes.map((route, index) => {
 							return (
-								<CustomTab value={route.href} label={route.title} key={index} />
+								<CustomTab
+									aria-label={`Перейти к ${route.title}`}
+									value={route.href}
+									label={route.title}
+									key={index}
+								/>
 							)
 						})}
 					</CustomTabs>

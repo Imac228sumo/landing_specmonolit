@@ -12,3 +12,7 @@ export const getTelegram = () => {
 export const getInstagram = () => {
 	return process.env.APP_INSTAGRAM_USER
 }
+
+export const getAppUrl = () => {
+	return process.env.APP_ENV
+}

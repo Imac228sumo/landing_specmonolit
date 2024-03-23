@@ -7,7 +7,9 @@ export default function LayoutPolicy({ children }: PropsWithChildren<unknown>) {
 	return (
 		<div className={styles.layout}>
 			<header className={styles.header}>
-				<Link href='/'>Вернуться на главную</Link>
+				<Link role='link' aria-label='Вернуться на главную' href='/'>
+					Вернуться на главную
+				</Link>
 			</header>
 
 			<main>{children}</main>

@@ -5,7 +5,12 @@ import LogoSmallSvg from '@/components/elements/site-logo-svg/LogoSmallSvg'
 
 export default function Logo() {
 	return (
-		<Link href={'/'} className={styles.logo}>
+		<Link
+			role='link'
+			aria-label='Главная страничка'
+			href={'/'}
+			className={styles.logo}
+		>
 			<LogoSmallSvg />
 			<p>
 				<b>СПЕЦ</b>МОНОЛИТ

@@ -33,6 +33,8 @@ export default function SectionOne({ handleOpen }: { handleOpen: () => void }) {
 					variants={animation}
 					custom={1}
 					onClick={() => handleOpen()}
+					role={'button'}
+					aria-label='Оставить заявку'
 				>
 					<motion.div
 						variants={buttonAnimation}

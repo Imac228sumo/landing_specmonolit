@@ -115,17 +115,14 @@ export default function SectionSeven() {
 										[styles.error]: touched.footing !== null && !footing,
 									})}
 								>
-									<InputLabel
-										id='simple-select-standard-label'
-										className={styles.inputLabel}
-									>
+									<InputLabel id='footing' className={styles.inputLabel}>
 										Основание
 									</InputLabel>
 									<Select
 										onBlur={event => onBlur({ event })}
 										name='footing'
 										onChange={handleSelectFootingChange}
-										labelId='simple-select-standard-label'
+										labelId='footing'
 										id='simple-select-standard'
 										value={footing}
 										label='Основание'
@@ -136,7 +133,12 @@ export default function SectionSeven() {
 									>
 										{selectFootingList.items.map((item, index) => {
 											return (
-												<MenuItem key={index} value={item.value}>
+												<MenuItem
+													role='button'
+													aria-label={item.value}
+													key={index}
+													value={item.value}
+												>
 													{item.value}
 												</MenuItem>
 											)
@@ -155,10 +157,7 @@ export default function SectionSeven() {
 										[styles.error]: touched.workloads !== null && !workloads,
 									})}
 								>
-									<InputLabel
-										id='simple-select-standard-label'
-										className={styles.inputLabel}
-									>
+									<InputLabel id='workloads' className={styles.inputLabel}>
 										Нагрузки
 									</InputLabel>
 
@@ -166,7 +165,7 @@ export default function SectionSeven() {
 										onBlur={event => onBlur({ event })}
 										name='workloads'
 										onChange={handleSelectWorkloadsChange}
-										labelId='simple-select-standard-label'
+										labelId='workloads'
 										id='simple-select-standard'
 										value={workloads}
 										label='Нагрузки'
@@ -177,7 +176,12 @@ export default function SectionSeven() {
 									>
 										{selectWorkloadsList.items.map((item, index) => {
 											return (
-												<MenuItem key={index} value={item.value}>
+												<MenuItem
+													role='button'
+													aria-label={item.value}
+													key={index}
+													value={item.value}
+												>
 													{item.value}
 												</MenuItem>
 											)
@@ -196,6 +200,7 @@ export default function SectionSeven() {
 										})}
 									>
 										<TextField
+											aria-label='Ваше имя'
 											error={touched.name !== null && !name}
 											helperText={
 												touched.name !== null && !name && 'Обязательное поле'
@@ -255,6 +260,7 @@ export default function SectionSeven() {
 											keepCharPositions={false}
 											render={(ref, props) => (
 												<TextField
+													aria-label='Ваш телефон'
 													error={
 														(touched.phone !== null && !phone) || isErrorPhone
 													}
@@ -290,9 +296,10 @@ export default function SectionSeven() {
 								</div>
 
 								<Button
+									role='button'
+									aria-label='Прикрепить файл'
 									className={styles.upload_button}
 									component='label'
-									role={undefined}
 									variant='contained'
 									tabIndex={-1}
 									endIcon={<UploadSvg />}
@@ -317,6 +324,8 @@ export default function SectionSeven() {
 									<FormControlLabel
 										control={
 											<Checkbox
+												role='button'
+												aria-label='Согласен с обработкой персональных данных'
 												color='default'
 												icon={<RadioButtonUncheckedIcon />}
 												checkedIcon={<RadioButtonCheckedIcon />}
@@ -330,6 +339,8 @@ export default function SectionSeven() {
 								</FormControl>
 
 								<LoadingButton
+									role='button'
+									aria-label='Отправить данные для расчета стоимости'
 									disabled={!isAgreeable}
 									onClick={onSendMessage}
 									endIcon={!isLoading && <ArrowRightLongSvg />}

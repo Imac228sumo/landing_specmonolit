@@ -42,11 +42,11 @@ const textAnimation = {
 
 const cardAnimationLeft = {
 	hidden: {
-		x: -200,
+		y: 200,
 		opacity: 0,
 	},
 	visible: (custom: number) => ({
-		x: 0,
+		y: 0,
 		opacity: 1,
 		transition: { delay: custom * 0.2 },
 	}),
@@ -105,7 +105,7 @@ export default function SectionFive({
 								return (
 									<MServicesCardsGalleryItem
 										handleOpen={handleOpen}
-										custom={index}
+										custom={index / 5}
 										variants={cardAnimationLeft}
 										viewport={{ once: true }}
 										initial='hidden'

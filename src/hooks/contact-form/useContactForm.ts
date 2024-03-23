@@ -56,7 +56,6 @@ export const useContactForm = (parameters: ContactKeys[]) => {
 	const [phone, setPhone] = useState<string>('')
 	const [mail, setMail] = useState<string>('')
 	const [file, setFile] = useState<File | undefined>(undefined)
-	const [uploadedFile, setUploadedFile] = useState(false)
 
 	const [isAgreeable, setIsAgreeable] = useState(false)
 
@@ -236,7 +235,7 @@ export const useContactForm = (parameters: ContactKeys[]) => {
 
 			await mailService.sendMail(formData)
 			toast.success('Сообщение успешно отправлено!')
-			// resetForm()
+			resetForm()
 		} catch (error: any) {
 			toast.error('Не удалось отправить сообщение!')
 			setIsLoading(prev => false)
