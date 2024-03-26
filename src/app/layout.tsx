@@ -1,7 +1,7 @@
-import { GoogleAnalytics } from '@next/third-parties/google'
 import cn from 'classnames'
 import type { Metadata } from 'next'
 import { Manrope, Raleway } from 'next/font/google'
+import { GoogleAnalytics } from 'nextjs-google-analytics'
 import { Toaster } from 'react-hot-toast'
 
 import '@/assets/styles/globals.scss'
@@ -120,7 +120,10 @@ export default function RootLayout({
 				{children}
 				<Toaster position='top-center' />
 			</body>
-			<GoogleAnalytics gaId={process.env.APP_G_ID || ''} />
+			<GoogleAnalytics
+				gaMeasurementId={process.env.APP_GA_MEASUREMENT_ID || ''}
+				trackPageViews
+			/>
 		</html>
 	)
 }

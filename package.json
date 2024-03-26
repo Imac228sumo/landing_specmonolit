@@ -35,6 +35,7 @@
 		"next-connect": "^1.0.0",
 		"next-runtime": "^2.4.1",
 		"nextjs-cors": "^2.2.0",
+		"nextjs-google-analytics": "^2.3.3",
 		"nodemailer": "^6.9.13",
 		"react": "^18",
 		"react-dom": "^18",
