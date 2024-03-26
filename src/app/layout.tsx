@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from '@next/third-parties/google'
 import cn from 'classnames'
 import type { Metadata } from 'next'
 import { Manrope, Raleway } from 'next/font/google'
@@ -119,6 +120,7 @@ export default function RootLayout({
 				{children}
 				<Toaster position='top-center' />
 			</body>
+			<GoogleAnalytics gaId={process.env.APP_G_ID || ''} />
 		</html>
 	)
 }
