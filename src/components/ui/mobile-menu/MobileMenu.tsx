@@ -104,7 +104,7 @@ export default function MobileMenu() {
 									className={styles.menu_container}
 									style={{
 										marginTop: headerHeight - scrollHeight,
-										height: `calc(100vh - ${headerHeight - scrollHeight}px)`,
+										height: `calc(100% - ${headerHeight - scrollHeight}px)`,
 									}}
 								>
 									<div className={styles.body}>
