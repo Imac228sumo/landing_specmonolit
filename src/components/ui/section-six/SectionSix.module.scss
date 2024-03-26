@@ -4,7 +4,7 @@
 .wrapper {
 	// height: 1200px;
 	margin-top: 70px;
-	background: #222222;
+	background: #171717;
 
 	@media (max-width: 1280px) {
 		margin-top: calc(46px + (24 + 24 * 3.539) * ((100vw - 998px) / 1280));
@@ -169,7 +169,7 @@
 			.right_side {
 				position: relative;
 				width: 760px;
-				background-color: #222222;
+				background-color: #171717;
 
 				@media (max-width: 1280px) {
 					width: calc(580px + (180 + 180 * 3.539) * ((100vw - 998px) / 1280));
@@ -202,7 +202,7 @@
 						transition: 300ms;
 						cursor: pointer;
 
-						@include fade-bg-gradient(0deg);
+						@include fade-bg-gradient-two(0deg);
 
 						@media (hover: hover) {
 							&:hover {

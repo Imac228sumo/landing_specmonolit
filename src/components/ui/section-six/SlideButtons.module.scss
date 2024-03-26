@@ -5,6 +5,9 @@
 
 	> button {
 		padding: 0px;
+		&:hover {
+			background-color: transparent;
+		}
 
 		> svg {
 			transition: opacity 0.2s ease-in-out;

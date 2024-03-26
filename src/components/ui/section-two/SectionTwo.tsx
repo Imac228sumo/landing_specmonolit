@@ -47,7 +47,7 @@ export default function SectionTwo({ handleOpen }: { handleOpen: () => void }) {
 							whileTap={'tap'}
 						>
 							<span>
-								Рассчитать стоимость <ArrowRightSmallSvg />
+								Рассчитать стоимость <ArrowRightSmallSvg color='white' />
 							</span>
 						</motion.button>
 					</motion.div>

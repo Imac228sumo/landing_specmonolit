@@ -141,11 +141,12 @@
 			}
 
 			> div:last-child > button {
+				border: 3px white solid;
+				background-color: transparent;
 				position: relative;
 				z-index: 30 !important;
 				cursor: pointer;
 				padding: 14px 54px 14px 74px;
-				background: #fff;
 
 				> span {
 					gap: 4px;
@@ -153,10 +154,10 @@
 					align-items: center;
 					justify-content: center;
 					font-family: var(--font-raleway);
-					font-weight: 600;
+					font-weight: 700;
 					font-size: 18px;
 					line-height: 24px;
-					color: #0c0c0c;
+					color: white;
 				}
 
 				@media (max-width: 480px) {
@@ -171,3 +172,34 @@
 		}
 	}
 }
+/*
+> div:last-child > button {
+			position: relative;
+			z-index: 30 !important;
+			cursor: pointer;
+			padding: 14px 54px 14px 74px;
+			background: #fff;
+
+			> span {
+				gap: 4px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-family: var(--font-raleway);
+				font-weight: 600;
+				font-size: 18px;
+				line-height: 24px;
+				color: #0c0c0c;
+			}
+
+			@media (max-width: 480px) {
+				padding: 11px 54px 11px 74px;
+				width: 340px;
+
+				> span {
+					font-size: 16px;
+				}
+			}
+		}
+
+*/
