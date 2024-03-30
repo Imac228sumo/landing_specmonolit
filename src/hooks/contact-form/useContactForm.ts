@@ -2,6 +2,7 @@ import { SelectChangeEvent } from '@mui/material'
 import {
 	ChangeEvent,
 	FocusEvent,
+	useCallback,
 	useEffect,
 	useMemo,
 	useRef,
@@ -59,29 +60,37 @@ export const useContactForm = (parameters: ContactKeys[]) => {
 
 	const [isAgreeable, setIsAgreeable] = useState(false)
 
-	const onBlur = ({
-		event,
-	}: {
-		event: FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
-	}) => setTouched(prev => ({ ...prev, [event.target.name]: true }))
+	const onBlur = useCallback(
+		({
+			event,
+		}: {
+			event: FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
+		}) => setTouched(prev => ({ ...prev, [event.target.name]: true })),
+		[]
+	)
 
 	function containsAtLeastOneDigit(phoneNumber: string) {
 		const regex = /\+7 \(\d{1,3}\) \d{1,3}-\d{1,2}-\d{1,2}/
 		return regex.test(phoneNumber)
 	}
 
-	const handleUploadFile = (event: ChangeEvent<HTMLInputElement>) => {
-		if (event.target.files?.length) {
-			setFile(prev => undefined)
-			setFile(event.target.files[0])
-		}
-	}
+	const handleUploadFile = useCallback(
+		(event: ChangeEvent<HTMLInputElement>) => {
+			if (event.target.files?.length) {
+				setFile(prev => undefined)
+				setFile(event.target.files[0])
+			}
+		},
+		[]
+	)
 
-	const handleFocusPhone = (event: FocusEvent<HTMLInputElement, Element>) => {
-		setIsFocusPhone(prev => event)
-		setIsGuide(prev => true)
-	}
-
+	const handleFocusPhone = useCallback(
+		(event: FocusEvent<HTMLInputElement, Element>) => {
+			setIsFocusPhone(prev => event)
+			setIsGuide(prev => true)
+		},
+		[]
+	)
 	useEffect(() => {
 		if (isFocusPhone) {
 			const value = isFocusPhone.target.value
@@ -95,78 +104,86 @@ export const useContactForm = (parameters: ContactKeys[]) => {
 		}
 	}, [isFocusPhone])
 
-	const handleBlurPhone = (
-		event: FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
-	) => {
-		setTouched(prev => ({ ...prev, [event.target.name]: true }))
-		setIsFocusPhone(prev => null)
-		setIsGuide(prev => false)
-		const digitsOnly = phone.replace(/\D/g, '')
-
-		if (digitsOnly.length !== 11) {
-			setIsErrorPhone(true)
-		} else {
-			setIsErrorPhone(false)
-		}
-		if (phone === '+7 (___) ___-__-__' || phone === '') {
-			setPhone('')
+	const handleBlurPhone = useCallback(
+		(event: FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>) => {
+			setTouched(prev => ({ ...prev, [event.target.name]: true }))
+			setIsFocusPhone(prev => null)
 			setIsGuide(prev => false)
-		} else if (containsAtLeastOneDigit(phone.replace(/_/g, '1'))) {
-			setIsGuide(prev => true)
-		}
-	}
+			const digitsOnly = phone.replace(/\D/g, '')
 
-	const handleEmailChange = (
-		event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-	) => {
-		const newEmail = event.target.value
-		if (validEmail.test(newEmail)) {
-			setIsErrorEmail(false)
-			setMail(newEmail)
-		} else {
-			setMail(newEmail)
-			setIsErrorEmail(true)
-		}
-	}
+			if (digitsOnly.length !== 11) {
+				setIsErrorPhone(true)
+			} else {
+				setIsErrorPhone(false)
+			}
+			if (phone === '+7 (___) ___-__-__' || phone === '') {
+				setPhone('')
+				setIsGuide(prev => false)
+			} else if (containsAtLeastOneDigit(phone.replace(/_/g, '1'))) {
+				setIsGuide(prev => true)
+			}
+		},
+		[phone]
+	)
 
-	const handleBlurEmail = (
-		event: FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
-	) => {
-		if (mail === '') {
-			setIsErrorEmail(false)
-		}
-	}
+	const handleEmailChange = useCallback(
+		(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+			const newEmail = event.target.value
+			if (validEmail.test(newEmail)) {
+				setIsErrorEmail(false)
+				setMail(newEmail)
+			} else {
+				setMail(newEmail)
+				setIsErrorEmail(true)
+			}
+		},
+		[]
+	)
 
-	const handleSquareChange = (
-		event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-	) => {
-		const value = event.target.value
-		const regex = /^[0-9]*$/
-		if (regex.test(value) && value.length <= 20) {
-			setSquare(prev => value)
-		}
-	}
+	const handleBlurEmail = useCallback(
+		(event: FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>) => {
+			if (mail === '') {
+				setIsErrorEmail(false)
+			}
+		},
+		[mail]
+	)
 
-	const handleSelectFootingChange = (event: SelectChangeEvent) => {
+	const handleSquareChange = useCallback(
+		(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+			const value = event.target.value
+			const regex = /^[0-9]*$/
+			if (regex.test(value) && value.length <= 20) {
+				setSquare(prev => value)
+			}
+		},
+		[]
+	)
+
+	const handleSelectFootingChange = useCallback((event: SelectChangeEvent) => {
 		setFooting(prev => event.target.value as string)
-	}
+	}, [])
 
-	const handleSelectWorkloadsChange = (event: SelectChangeEvent) => {
-		setWorkloads(prev => event.target.value as string)
-	}
+	const handleSelectWorkloadsChange = useCallback(
+		(event: SelectChangeEvent) => {
+			setWorkloads(prev => event.target.value as string)
+		},
+		[]
+	)
 
-	const handleNameChange = (
-		event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-	) => {
-		const newValue = event.target.value
-		const containsOnlyLetters = /^[A-Za-zА-Яа-яЁё\s]*$/.test(newValue)
-		const words = newValue.split(' ').filter(Boolean)
-		if (containsOnlyLetters && words.length <= 3 && newValue.length <= 50) {
-			setName(prev => newValue)
-		}
-	}
+	const handleNameChange = useCallback(
+		(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+			const newValue = event.target.value
+			const containsOnlyLetters = /^[A-Za-zА-Яа-яЁё\s]*$/.test(newValue)
+			const words = newValue.split(' ').filter(Boolean)
+			if (containsOnlyLetters && words.length <= 3 && newValue.length <= 50) {
+				setName(prev => newValue)
+			}
+		},
+		[]
+	)
 
-	const handleAgreeableChange = () => {
+	const handleAgreeableChange = useCallback(() => {
 		const values = { name, footing, workloads, square, phone, mail }
 		const allValuesPresent = parameters.every(
 			key => values[key as ContactKeys].trim() !== ''
@@ -177,7 +194,17 @@ export const useContactForm = (parameters: ContactKeys[]) => {
 		} else {
 			setIsAgreeable(prev => false)
 		}
-	}
+	}, [
+		name,
+		footing,
+		workloads,
+		square,
+		phone,
+		mail,
+		isErrorPhone,
+		isAgreeable,
+		parameters,
+	])
 
 	useEffect(() => {
 		const values = { name, footing, workloads, square, phone, mail }
@@ -187,9 +214,9 @@ export const useContactForm = (parameters: ContactKeys[]) => {
 		if (allValuesPresent) {
 			setIsAgreeable(prev => false)
 		}
-	}, [square, footing, workloads, name, phone, mail])
+	}, [square, footing, workloads, name, phone, mail, parameters])
 
-	const resetForm = () => {
+	const resetForm = useCallback(() => {
 		setTouched({
 			name: null,
 			phone: null,
@@ -209,9 +236,9 @@ export const useContactForm = (parameters: ContactKeys[]) => {
 		setIsErrorPhone(prev => false)
 		setIsErrorEmail(prev => false)
 		setIsGuide(prev => false)
-	}
+	}, [])
 
-	const onSendMessage = async () => {
+	const onSendMessage = useCallback(async () => {
 		setIsLoading(prev => true)
 		try {
 			const data: IFormData = createDataObject({
@@ -242,7 +269,7 @@ export const useContactForm = (parameters: ContactKeys[]) => {
 		} finally {
 			setIsLoading(prev => false)
 		}
-	}
+	}, [file, footing, mail, name, phone, resetForm, square, workloads])
 
 	return useMemo(
 		() => ({

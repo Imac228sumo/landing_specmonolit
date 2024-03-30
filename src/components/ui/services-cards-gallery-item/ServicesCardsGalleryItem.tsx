@@ -61,6 +61,8 @@ const ServicesCardsGalleryItem = forwardRef<
 						<>
 							<Image
 								alt={item.title}
+								title={item.subTitle}
+								about={item.descriptions}
 								src={item.image}
 								fill
 								draggable={false}
@@ -84,7 +86,7 @@ const ServicesCardsGalleryItem = forwardRef<
 							<div className={styles.request}>
 								<div>
 									<span>
-										<h4>Оставить заявку</h4>
+										<h4 title='Оставить заявку'>Оставить заявку</h4>
 										<ArrowSmallSvg />
 									</span>
 

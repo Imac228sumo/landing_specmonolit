@@ -17,10 +17,13 @@ export const useModalWindow = (style: object) => {
 		}
 	}, [])
 
-	const dynamicStyle = {
-		...style,
-		top: modalTop,
-	}
+	const dynamicStyle = useMemo(
+		() => ({
+			...style,
+			top: modalTop,
+		}),
+		[style, modalTop]
+	)
 
 	return useMemo(
 		() => ({

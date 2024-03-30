@@ -13,7 +13,7 @@ export default function Logo() {
 		>
 			<LogoSmallSvg />
 			<p>
-				<b>СПЕЦ</b>МОНОЛИТ
+				<b>МОНОЛИТ</b>УРАЛ
 			</p>
 		</Link>
 	)

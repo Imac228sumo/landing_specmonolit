@@ -96,7 +96,6 @@
 				}
 
 				@media (max-width: 998px) {
-					align-items: center;
 					margin-right: 0px;
 					width: 100%;
 				}
@@ -234,20 +233,59 @@
 							color: white;
 							z-index: 2;
 
-							.media_caption {
+							.media_title {
 								font-family: var(--font-raleway);
 								font-weight: 600;
-								font-size: 20px;
-								line-height: 140%;
+								font-size: 18px;
+								line-height: 156%;
 								text-transform: uppercase;
 								color: #fff;
 								@media (max-width: 1280px) {
 									font-size: calc(
-										16px + (4 + 4 * 3.539) * ((100vw - 998px) / 1280)
+										14px + (4 + 4 * 3.539) * ((100vw - 998px) / 1280)
 									);
 								}
+								@media (max-width: 998px) {
+									font-size: 16px;
+									font-size: calc(
+										12px + (8 + 8 * 0.92664) * ((100vw - 480px) / 998)
+									);
+								}
+								@media (max-width: 767px) {
+									font-size: 20px;
+								}
+								@media (max-width: 480px) {
+									font-size: calc(17px + (3 + 3 * 3) * ((100vw - 360px) / 480));
+								}
+
+								&.isCaption {
+									font-weight: 600;
+									font-size: 20px;
+									line-height: 140%;
+
+									@media (max-width: 1280px) {
+										font-size: calc(
+											15px + (5 + 5 * 3.539) * ((100vw - 998px) / 1280)
+										);
+									}
+									@media (max-width: 998px) {
+										font-size: 20px;
+										font-size: calc(
+											15px + (5 + 5 * 0.92664) * ((100vw - 480px) / 998)
+										);
+									}
+									@media (max-width: 767px) {
+										font-size: 20px;
+									}
+
+									@media (max-width: 480px) {
+										font-size: calc(
+											18px + (2 + 2 * 3) * ((100vw - 360px) / 480)
+										);
+									}
+								}
 							}
-							.media_description {
+							.media_caption {
 								font-family: var(--font-raleway);
 								font-weight: 400;
 								font-size: 18px;
@@ -256,17 +294,21 @@
 
 								@media (max-width: 1280px) {
 									font-size: calc(
-										16px + (2 + 2 * 3.539) * ((100vw - 998px) / 1280)
+										14px + (4 + 4 * 3.539) * ((100vw - 998px) / 1280)
 									);
 								}
-							}
-
-							@media (max-width: 998px) {
-								.media_caption {
-									font-size: 20px;
-								}
-								.media_description {
+								@media (max-width: 998px) {
 									font-size: 18px;
+									font-size: calc(
+										16px + (2 + 2 * 0.92664) * ((100vw - 480px) / 998)
+									);
+								}
+								@media (max-width: 767px) {
+									font-size: 18px;
+								}
+
+								@media (max-width: 480px) {
+									font-size: calc(16px + (2 + 2 * 3) * ((100vw - 360px) / 480));
 								}
 							}
 						}

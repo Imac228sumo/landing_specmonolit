@@ -4,8 +4,8 @@ import '@/assets/styles/globals.scss'
 import LayoutPolicy from '@/components/layoutPolicy/LayoutPolicy'
 
 export const metadata: Metadata = {
-	title: 'Спец монолит',
-	description: 'Спец монолит',
+	title: 'Политика конфиденциальности',
+	description: 'Узнайте больше о политики конфиденциальности фирмы МонолитУрал',
 }
 
 export default function PolicyLayout({

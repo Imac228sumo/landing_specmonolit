@@ -3,7 +3,12 @@
 import { motion } from 'framer-motion'
 
 import styles from './SectionTwo.module.scss'
-import { buttonAnimation, textAnimationBottom } from '@/animations/animations'
+import {
+	buttonAnimation,
+	textAnimationBottom,
+	textAnimationLeft,
+	textAnimationRight,
+} from '@/animations/animations'
 import ArrowBigSvg from '@/components/elements/arrow/ArrowBigSvg'
 import ArrowRightSmallSvg from '@/components/elements/arrow/ArrowRightSmallSvg'
 import { scrollTo } from '@/utils/scroll-to/scrollTo'
@@ -17,18 +22,18 @@ export default function SectionTwo({ handleOpen }: { handleOpen: () => void }) {
 			className={styles.wrapper}
 		>
 			<div className={styles.content}>
-				<motion.div
-					variants={textAnimationBottom}
-					whileHover='hover'
-					onClick={() => handleOpen()}
-				>
+				<motion.div onClick={() => handleOpen()}>
 					<span>
-						<h4>Оставить заявку</h4>
-						<ArrowBigSvg color='white' />
+						<motion.h4 custom={6} variants={textAnimationLeft}>
+							Оставить заявку
+						</motion.h4>
+						<motion.span custom={6} variants={textAnimationRight}>
+							<ArrowBigSvg color='white' />
+						</motion.span>
 					</span>
-					<p>
+					<motion.p custom={6} variants={textAnimationLeft}>
 						Рассчитаем стоимость для <br /> вашего объекта
-					</p>
+					</motion.p>
 				</motion.div>
 				<div>
 					<div>

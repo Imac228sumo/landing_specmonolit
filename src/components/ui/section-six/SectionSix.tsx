@@ -2,6 +2,7 @@
 
 import { Box, Typography } from '@mui/material'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import classNames from 'classnames'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import 'swiper/css'
@@ -87,6 +88,8 @@ export default function SectionSix() {
 								>
 									<>
 										<Image
+											about={slide.title + (slide.caption || slide.subTitle)}
+											title={slide.seoTitle}
 											alt={`photo of the floor\n ${slide.title}`}
 											src={slide.image}
 											fill={true}
@@ -95,12 +98,20 @@ export default function SectionSix() {
 											sizes='100%'
 										/>
 										<Box className={styles.media_information}>
-											<Typography className={styles.media_caption}>
+											<Typography
+												className={classNames(styles.media_title, {
+													[styles.isCaption]: slide.caption,
+												})}
+											>
 												{slide.title}
+												<br />
+												{slide.subTitle}
 											</Typography>
-											<Typography className={styles.media_description}>
-												{slide.caption}
-											</Typography>
+											{slide.caption && (
+												<Typography className={styles.media_caption}>
+													{slide.caption}
+												</Typography>
+											)}
 										</Box>
 									</>
 								</SwiperSlide>

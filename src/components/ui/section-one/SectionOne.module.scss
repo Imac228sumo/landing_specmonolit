@@ -42,7 +42,7 @@
 				margin-top: calc(0px + (29 + 29 * 3.539) * ((100vw - 998px) / 1280));
 			}
 
-			> h5 {
+			> h3 {
 				margin: 0px;
 				font-family: var(--font-raleway);
 				font-weight: 400;
@@ -62,7 +62,7 @@
 				text-transform: uppercase;
 				color: #000;
 				margin: 0;
-				color: #0064fa;
+				color: #000000;
 				font-family: var(--font-manrope);
 				text-transform: uppercase;
 
@@ -72,7 +72,7 @@
 
 				> b {
 					font-weight: 500;
-					color: #000000;
+					color: #0064fa;
 				}
 			}
 		}
@@ -86,7 +86,7 @@
 				margin-right: calc(10px + (34 + 34 * 3.539) * ((100vw - 998px) / 1280));
 			}
 
-			> h5 {
+			> h3 {
 				margin: 0px;
 				font-family: var(--font-raleway);
 				font-weight: 500;
@@ -147,7 +147,7 @@
 				align-items: center;
 				width: 100%;
 				margin-left: 0px;
-				> h5 {
+				> h3 {
 					text-align: center;
 					font-size: 12px;
 					letter-spacing: 0.48em;
@@ -166,7 +166,7 @@
 				margin: 0px;
 				margin-bottom: 37px;
 
-				> h5 {
+				> h3 {
 					width: 100%;
 					text-align: center;
 					line-height: 28px;

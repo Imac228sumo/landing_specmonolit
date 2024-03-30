@@ -17,7 +17,7 @@ export default function RightSide() {
 	return (
 		<section className={styles.wrapper}>
 			<section className={styles.navigation}>
-				<h3>Навигация</h3>
+				<h3 title='Навигация'>Навигация</h3>
 				<ul>
 					<li>
 						<button
@@ -67,7 +67,7 @@ export default function RightSide() {
 				</ul>
 			</section>
 			<section className={styles.contacts}>
-				<h3>Контакты</h3>
+				<h3 title='Контакты'>Контакты</h3>
 				<ul>
 					<li>
 						<a

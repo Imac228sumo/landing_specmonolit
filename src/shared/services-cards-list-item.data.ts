@@ -1,39 +1,44 @@
 import { IServicesCards } from './services-cards-list-item.interface'
-import imgFive from '@/assets/images/photo_five.jpg'
-import imgFour from '@/assets/images/photo_four.jpg'
-import imgOne from '@/assets/images/photo_one.jpg'
-import imgThree from '@/assets/images/photo_three.jpg'
-import imgTwo from '@/assets/images/photo_two.jpg'
+import imgFive from '@/assets/images/cards/card_five.jpg'
+import imgFour from '@/assets/images/cards/card_four.jpg'
+import imgOne from '@/assets/images/cards/card_one.jpg'
+import imgThree from '@/assets/images/cards/card_three.jpg'
+import imgTwo from '@/assets/images/cards/card_two.jpg'
 
 export const servicesCardsList: IServicesCards = {
 	items: [
 		{
-			title: 'Топинговые полы',
-			descriptions: 'От 150 руб/м²',
+			title: 'Бетонные топпинговые полы',
+			subTitle: 'Бетонные полы цена',
+			descriptions: 'От 340 руб/м²',
 			image: imgOne,
 			id: '0',
 		},
 		{
-			title: 'Полимерные полы',
-			descriptions: 'От 240 руб/м²',
+			title: 'Полимерные наливные полы',
+			subTitle: 'Наливной пол цена',
+			descriptions: 'От 399 руб/м²',
 			image: imgTwo,
 			id: '1',
 		},
 		{
-			title: 'Промышленные наливные полы',
-			descriptions: 'От 140 руб/м²',
+			title: 'Полиуретан-цементные полы',
+			subTitle: 'Топпинг полы',
+			descriptions: 'От 399 руб/м²',
 			image: imgThree,
 			id: '2',
 		},
 		{
-			title: 'Наливной пол в стиле LOFT',
-			descriptions: 'Цена договорная',
+			title: 'Разметка и зонирование',
+			subTitle: 'Наливной пол рассчитать',
+			descriptions: 'От 299 руб/м²',
 			image: imgFour,
 			id: '3',
 		},
 		{
-			title: 'Наливные полы 3D',
-			descriptions: 'Цена договорная',
+			title: 'Шлифовка и восстановление',
+			subTitle: 'Залив наливного полы',
+			descriptions: 'От 499 руб/м²',
 			image: imgFive,
 			id: '4',
 		},

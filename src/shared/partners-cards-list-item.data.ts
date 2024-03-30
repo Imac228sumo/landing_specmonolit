@@ -1,42 +1,46 @@
 import { IPartnersCards } from './partners-cards-list-item.interface'
-import imgBaltica from '@/assets/images/partners/Baltica.png'
-import imgMmk from '@/assets/images/partners/Mmk.png'
-import imgPyatorochka from '@/assets/images/partners/Pyatorochka.png'
-import imgRavis from '@/assets/images/partners/Ravis.png'
+import imgEight from '@/assets/images/partners/logo_eight.png'
+import imgFive from '@/assets/images/partners/logo_five.svg'
+import imgFour from '@/assets/images/partners/logo_four.png'
+import imgOne from '@/assets/images/partners/logo_one.svg'
+import imgSeven from '@/assets/images/partners/logo_seven.png'
+import imgSix from '@/assets/images/partners/logo_six.svg'
+import imgThree from '@/assets/images/partners/logo_three.svg'
+import imgTwo from '@/assets/images/partners/logo_two.png'
 
 export const partnersCardsList: IPartnersCards = {
 	items: [
 		{
-			title: 'Балтика',
-			image: imgBaltica,
+			image: imgOne,
+			seoTitle: 'Заливка пола',
 		},
 		{
-			title: 'Пятёрочка',
-			image: imgPyatorochka,
+			image: imgTwo,
+			seoTitle: 'Напольные покрытия заказать',
 		},
 		{
-			title: 'Равис',
-			image: imgRavis,
+			image: imgThree,
+			seoTitle: 'Восстановление пола',
 		},
 		{
-			title: 'ММК',
-			image: imgMmk,
+			image: imgFour,
+			seoTitle: 'Наливное пол калькулятор',
 		},
 		{
-			title: 'Балтика',
-			image: imgBaltica,
+			image: imgFive,
+			seoTitle: 'Бетонные полы',
 		},
 		{
-			title: 'Пятёрочка',
-			image: imgPyatorochka,
+			image: imgSix,
+			seoTitle: 'Полимерный наливной пол',
 		},
 		{
-			title: 'Равис',
-			image: imgRavis,
+			image: imgSeven,
+			seoTitle: 'Промышленные полы',
 		},
 		{
-			title: 'ММК',
-			image: imgMmk,
+			image: imgEight,
+			seoTitle: 'Ремонт полов',
 		},
 	],
 }

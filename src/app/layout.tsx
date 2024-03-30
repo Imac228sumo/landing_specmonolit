@@ -5,8 +5,6 @@ import { Manrope, Raleway } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 
 import '@/assets/styles/globals.scss'
-import { siteConfig } from '@/config/site'
-import { getAppUrl } from '@/utils/get-env/getEnv'
 
 const raleway = Raleway({
 	subsets: ['latin', 'cyrillic'],
@@ -24,56 +22,17 @@ const manrope = Manrope({
 	variable: '--font-manrope',
 })
 
+const BASE_URL = process.env.REACT_APP_URL || 'https://localhost:3000'
+
 export const metadata: Metadata = {
-	metadataBase: new URL('https://landing-specmonolit.vercel.app/'),
+	metadataBase: new URL(BASE_URL),
 	title: {
-		default: 'Наливные полы любой сложности ☎ СК Спецмонолит',
-		template: `%s - Наливные полы любой сложности ☎ СК Спецмонолит`,
+		default: 'Наливные и бетонные полы заказать в Челябинске и Екатеринбурге',
+		template: `%s - Наливные и бетонные полы заказать в Челябинске и Екатеринбурге`,
 	},
 	description:
-		'Наливные полы любой сложности можете заказать у нас. Работы по топпинговым полам, полимерные полы, промышленный наливной пол, ремонт покрытий. Обращайтесь!',
-	keywords: [
-		'полы',
-		'наливные полы',
-		'полы любой сложности',
-		'наливные полы любой сложности',
-		'красивые полы',
-		'красивые пол',
-		'супер полы',
-		'пол',
-		'половая доска',
-		'бетон для пола',
-		'строительство',
-		'кастомные полы',
-		'делаем пол',
-		'сложные полы',
-		'полы для ванн',
-		'полы для кухни',
-		'сложные для дома',
-		'полы для завода',
-		'полы для офиса',
-		'полы для завода',
-		'полы для офиса',
-		'floors',
-		'self-leveling floors',
-		'floors of any complexity',
-		'beautiful floors',
-		'super floors',
-		'gender',
-		'floorboard',
-		'concrete for the floor',
-		'construction',
-		'custom floors',
-		'making the floor',
-		'complex floors',
-		'bathroom floors',
-		'kitchen floors',
-		'challenging for the home',
-		'floors for the factory',
-		'office floors',
-		'floors for the factory',
-		'office floors',
-	],
+		'Заказать установку наливных полов в Челябинске, Екатеринбурге и УРФО. Рассчитать стоимость полов с помощью удобного калькулятора и узнать цену. Ремонт полов любой сложности. Бетонные топпинговые полы купить',
+	keywords: ['Наливной пол', 'Бетонный пол'],
 	authors: [
 		{
 			name: 'Валерий Сергеевич',
@@ -81,26 +40,13 @@ export const metadata: Metadata = {
 		},
 	],
 	creator: 'Валерий',
-	themeColor: [
-		{ media: '(prefers-color-scheme: light)', color: 'white' },
-		{ media: '(prefers-color-scheme: dark)', color: 'black' },
-	],
 	openGraph: {
 		type: 'website',
 		locale: 'ru_RU',
-		url: getAppUrl() || 'https://landing-specmonolit.vercel.app/',
-		title: 'Наливные полы любой сложности ☎ СК Спецмонолит',
+		url: BASE_URL,
+		title: 'Наливные и бетонные полы заказать в Челябинске и Екатеринбурге',
 		description:
-			'An open-source metadata builder tool for generating metadata and metadata file conventions for Next.js apps.',
-		siteName: 'СК Спецмонолит',
-		images: [
-			{
-				url: `${siteConfig.url}`,
-				width: 1200,
-				height: 715,
-				alt: 'Callsquare',
-			},
-		],
+			'Заказать установку наливных полов в Челябинске, Екатеринбурге и УРФО. Рассчитать стоимость полов с помощью удобного калькулятора и узнать цену. Ремонт полов любой сложности. Бетонные топпинговые полы купить',
 	},
 	icons: {
 		icon: '/favicon.ico',
@@ -120,7 +66,7 @@ export default function RootLayout({
 				{children}
 				<Toaster position='top-center' />
 			</body>
-			<GoogleAnalytics gaId={process.env.APP_GA_MEASUREMENT_ID || ''} />
+			<GoogleAnalytics gaId={process.env.REACT_APP_GA_MEASUREMENT_ID || ''} />
 		</html>
 	)
 }

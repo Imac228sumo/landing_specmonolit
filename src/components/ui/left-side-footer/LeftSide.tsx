@@ -8,7 +8,7 @@ export default function LeftSide() {
 		<section className={styles.wrapper}>
 			<section>
 				<LogoMediumSvg />
-				<h3>СпецМОНОЛИТ</h3>
+				<h3 title='МОНОЛИТУРАЛ'>МОНОЛИТУРАЛ</h3>
 			</section>
 			<section>
 				<Link

@@ -66,7 +66,9 @@ export default function SectionSeven() {
 			<div className={styles.content}>
 				<div className={styles.container}>
 					<div>
-						<h1>Рассчитайте стоимость прямо сейчас!</h1>
+						<h3 title='Рассчитайте стоимость прямо сейчас!'>
+							Рассчитайте стоимость прямо сейчас!
+						</h3>
 						<p>
 							С помощью онлайн калькулятора и консультации нашего специалиста
 						</p>

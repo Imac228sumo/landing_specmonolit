@@ -2,7 +2,7 @@
 
 import { Variants, motion } from 'framer-motion'
 
-import styles from './loading.module.scss'
+import styles from './Loading.module.scss'
 
 const variants: Variants = {
 	initial: {

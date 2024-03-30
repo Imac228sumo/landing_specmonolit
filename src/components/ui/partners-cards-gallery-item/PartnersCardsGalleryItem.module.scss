@@ -16,8 +16,9 @@
 
 		img {
 			position: relative !important;
-			width: 41.5% !important;
-			height: 41.5% !important;
+			// width: 41.5% !important;
+			height: 46.5% !important;
+			object-fit: contain;
 		}
 
 		.title {

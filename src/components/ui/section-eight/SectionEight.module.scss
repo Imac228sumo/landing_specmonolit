@@ -21,7 +21,7 @@
 		margin-right: auto;
 		height: 100%;
 
-		> h1 {
+		> h2 {
 			// padding-left: 20px;
 			// padding-right: 20px;
 			margin-bottom: 26px;
@@ -38,7 +38,7 @@
 			margin-left: calc(50px + (10 + 10 * 3.539) * ((100vw - 998px) / 1280));
 			margin-right: calc(50px + (10 + 10 * 3.539) * ((100vw - 998px) / 1280));
 
-			> h1 {
+			> h2 {
 				font-size: calc(20px + (4 + 4 * 3.539) * ((100vw - 998px) / 1280));
 				margin-bottom: calc(
 					15px + (11 + 11 * 3.539) * ((100vw - 998px) / 1280)
@@ -49,7 +49,7 @@
 		@media (max-width: 998px) {
 			margin-left: calc(30px + (20 + 20 * 0.92664) * ((100vw - 480px) / 998));
 			margin-right: calc(30px + (20 + 20 * 0.92664) * ((100vw - 480px) / 998));
-			> h1 {
+			> h2 {
 				font-size: 20px;
 				margin-bottom: calc(11px + (4 + 4 * 0.92664) * ((100vw - 480px) / 998));
 			}
@@ -58,7 +58,7 @@
 		@media (max-width: 480px) {
 			margin-left: calc(10px + (20 + 20 * 3) * ((100vw - 360px) / 480));
 			margin-right: calc(10px + (20 + 20 * 3) * ((100vw - 360px) / 480));
-			> h1 {
+			> h2 {
 				font-size: calc(18px + (2 + 2 * 3) * ((100vw - 360px) / 480));
 			}
 		}
@@ -66,7 +66,7 @@
 		@media (max-width: 360px) {
 			margin-left: 10px;
 			margin-right: 10px;
-			> h1 {
+			> h2 {
 				font-size: 18px;
 			}
 		}

@@ -58,14 +58,16 @@ const PartnersCardsGalleryItem: FC<{ item: IPartnersCardItem }> = ({
 				<ServicesCardsItem className={cn(styles.item)}>
 					<motion.div>
 						<Image
-							alt={item.title}
+							title={item.seoTitle}
+							about={item.seoTitle}
+							alt={item.title || 'logo'}
 							src={item.image}
 							fill
 							draggable={false}
 							priority
 							sizes='41%'
 						/>
-						<div className={styles.title}>{item.title}</div>
+						{item.title && <div className={styles.title}>{item.title}</div>}
 					</motion.div>
 				</ServicesCardsItem>
 			</motion.div>

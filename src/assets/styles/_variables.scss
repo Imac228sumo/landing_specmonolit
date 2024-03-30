@@ -59,6 +59,38 @@ $yellow-700: #f5c521;
 		);
 	}
 }
+
+@mixin fade-bg-gradient-three($direction: 90deg, $reverse-direction: 270deg) {
+	&::before {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		content: '';
+		background: linear-gradient(
+				$direction,
+				#101215 -10%,
+				rgba(#101215, 0.15) 47.32%,
+				rgba(#101215, 0.15) 51.72%,
+				rgba(#101215, 0.08) 56.12%,
+				rgba(#101215, 0.03) 60.52%,
+				rgba(#101215, 0.01) 64.92%,
+				rgba(#101215, 0) 69.32%
+			),
+			linear-gradient(
+				$reverse-direction,
+				#101215 -10%,
+				rgba(#101215, 0.15) 47.32%,
+				rgba(#101215, 0.15) 51.72%,
+				rgba(#101215, 0.08) 56.12%,
+				rgba(#101215, 0.03) 60.52%,
+				rgba(#101215, 0.01) 64.92%,
+				rgba(#101215, 0) 69.32%
+			);
+	}
+}
 /*rgba(#101215, 0.99) 7.71%,
 			rgba(#101215, 0.96) 12.11%,
 			rgba(#101215, 0.91) 16.51%,

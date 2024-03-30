@@ -4,11 +4,14 @@ import { Box } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import { ThemeProvider, createTheme, styled } from '@mui/material/styles'
 import { AnimatePresence } from 'framer-motion'
-
-import PartnersCardsGalleryItem from '../partners-cards-gallery-item/PartnersCardsGalleryItem'
+import React, { Suspense } from 'react'
 
 import styles from './SectionEight.module.scss'
 import { partnersCardsList } from '@/shared/partners-cards-list-item.data'
+
+const LazyPartnersCardsGalleryItem = React.lazy(
+	() => import('../partners-cards-gallery-item/PartnersCardsGalleryItem')
+)
 
 declare module '@mui/system' {
 	interface BreakpointOverrides {
@@ -50,7 +53,7 @@ export default function SectionEight() {
 	return (
 		<section id='section_eight' className={styles.wrapper}>
 			<div className={styles.content}>
-				<h1>Наши партнёры</h1>
+				<h2 title='Наши партнёры'>Наши партнёры</h2>
 				<ResponsiveBox style={{ flexGrow: 1, margin: -20 }}>
 					<ThemeProvider
 						theme={createTheme({
@@ -80,7 +83,9 @@ export default function SectionEight() {
 						>
 							<AnimatePresence presenceAffectsLayout>
 								{partnersCardsList.items.map((item, index) => (
-									<PartnersCardsGalleryItem item={item} key={index} />
+									<Suspense key={index}>
+										<LazyPartnersCardsGalleryItem item={item} />
+									</Suspense>
 								))}
 							</AnimatePresence>
 						</Grid>

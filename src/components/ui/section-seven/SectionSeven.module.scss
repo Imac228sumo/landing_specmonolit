@@ -48,7 +48,7 @@
 			> div:first-child {
 				width: 100%;
 
-				> h1 {
+				> h3 {
 					margin-top: 0px;
 					margin-bottom: 10px;
 					font-family: var(--font-raleway);
@@ -62,7 +62,6 @@
 					}
 
 					@media (max-width: 998px) {
-						text-align: center;
 						font-size: calc(
 							24px + (12 + 12 * 0.92664) * ((100vw - 480px) / 998)
 						);
@@ -106,7 +105,7 @@
 				}
 				.left_side {
 					position: relative;
-					background: url(/background-big.jpg);
+					background: url(/background_small.jpg);
 					background-repeat: no-repeat;
 					background-size: cover;
 					background-position-x: 40%;
@@ -114,6 +113,7 @@
 					overflow: hidden;
 
 					@media (max-width: 998px) {
+						background-position-y: 55%;
 						height: calc(
 							220px + (100 + 100 * 0.92664) * ((100vw - 480px) / 998)
 						);
@@ -444,7 +444,7 @@
 // 			> div:first-child {
 // 				width: 100%;
 
-// 				> h1 {
+// 				> h3 {
 // 					margin-top: 0px;
 // 					margin-bottom: 10px;
 // 					font-family: var(--font-raleway);

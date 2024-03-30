@@ -1,46 +1,58 @@
 import { ISlide } from './slider-cards-list.interface'
-import imgFive from '@/assets/images/photo_five.jpg'
-import imgFour from '@/assets/images/photo_four.jpg'
-import imgOne from '@/assets/images/photo_one.jpg'
-import imgThree from '@/assets/images/photo_three.jpg'
-import imgTwo from '@/assets/images/photo_two.jpg'
+import imgFive from '@/assets/images/slides/slide_five.jpg'
+import imgFour from '@/assets/images/slides/slide_four.jpg'
+import imgOne from '@/assets/images/slides/slide_one.jpg'
+import imgSix from '@/assets/images/slides/slide_six.jpg'
+import imgThree from '@/assets/images/slides/slide_three.jpg'
+import imgTwo from '@/assets/images/slides/slide_two.jpg'
 
 export const slides: ISlide[] = [
 	{
-		title: 'Создание полов на “ЧКПЗ”',
+		title: 'УСТАНОВКА полов на “ЧКПЗ”',
 		caption: 'Общая площадь 1200 м²',
 		image: imgOne,
 		key: 'Slide 1',
+
+		seoTitle: 'Промышленные полы купить',
 	},
 	{
-		title: 'Создание полов на “ЧКПЗ”',
-		caption: 'Общая площадь 1200 м²',
-		image: imgTwo,
-		key: 'Slide 2',
-	},
-	{
-		title: 'Создание полов на “ЧКПЗ”',
-		caption: 'Общая площадь 1200 м²',
+		title: 'Ремонт пола “МЧС РОССИИ”',
+		caption: 'Общая площадь: 1-2 этажи',
 		image: imgThree,
-		key: 'Slide 3',
+		key: 'Slide 2',
+
+		seoTitle: 'Пол рассчитать стоимость',
 	},
 	{
-		title: 'Создание полов на “ЧКПЗ”',
-		caption: 'Общая площадь 1200 м²',
+		title: 'УСТАНОВКА полов для',
+		subTitle: 'АО “Почта России”',
+		image: imgTwo,
+		key: 'Slide 3',
+
+		seoTitle: 'Наливной пол сколько',
+	},
+	{
+		title: 'УСТАНОВКА пола для',
+		subTitle: 'ооо “люкс вода”',
 		image: imgFour,
 		key: 'Slide 4',
+
+		seoTitle: 'Жидкий пол заказать',
 	},
 	{
-		title: 'Создание полов на “ЧКПЗ”',
-		caption: 'Общая площадь 1200 м²',
+		title: 'УСТАНОВКА полов для',
+		subTitle: 'пао “ЧЕЛИНДБАНК”',
 		image: imgFive,
 		key: 'Slide 5',
-	},
 
+		seoTitle: 'Залить пол цена',
+	},
 	{
-		title: 'Создание полов на “ЧКПЗ”',
-		caption: 'Общая площадь 1200 м²',
-		image: imgOne,
+		title: 'УСТАНОВКА пола для',
+		subTitle: 'ао “Русская Медная Компания”',
+		image: imgSix,
 		key: 'Slide 6',
+
+		seoTitle: 'Ремонтные работы полы',
 	},
 ]
