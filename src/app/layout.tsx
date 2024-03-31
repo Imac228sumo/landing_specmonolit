@@ -60,6 +60,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
+			<head>
+				<meta name='yandex-verification' content='2407deb6b0106e1d' />
+			</head>
 			<body
 				className={cn(raleway.variable, raleway.className, manrope.variable)}
 			>

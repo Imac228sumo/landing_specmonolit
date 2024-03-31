@@ -2,7 +2,6 @@ import { SelectChangeEvent } from '@mui/material'
 import {
 	ChangeEvent,
 	FocusEvent,
-	useCallback,
 	useEffect,
 	useMemo,
 	useRef,
@@ -60,37 +59,31 @@ export const useContactForm = (parameters: ContactKeys[]) => {
 
 	const [isAgreeable, setIsAgreeable] = useState(false)
 
-	const onBlur = useCallback(
-		({
-			event,
-		}: {
-			event: FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
-		}) => setTouched(prev => ({ ...prev, [event.target.name]: true })),
-		[]
-	)
+	//eslint-disable-next-line
+	const onBlur = ({
+		event,
+	}: {
+		event: FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
+	}) => setTouched(prev => ({ ...prev, [event.target.name]: true }))
 
 	function containsAtLeastOneDigit(phoneNumber: string) {
 		const regex = /\+7 \(\d{1,3}\) \d{1,3}-\d{1,2}-\d{1,2}/
 		return regex.test(phoneNumber)
 	}
 
-	const handleUploadFile = useCallback(
-		(event: ChangeEvent<HTMLInputElement>) => {
-			if (event.target.files?.length) {
-				setFile(prev => undefined)
-				setFile(event.target.files[0])
-			}
-		},
-		[]
-	)
+	//eslint-disable-next-line
+	const handleUploadFile = (event: ChangeEvent<HTMLInputElement>) => {
+		if (event.target.files?.length) {
+			setFile(prev => undefined)
+			setFile(event.target.files[0])
+		}
+	}
 
-	const handleFocusPhone = useCallback(
-		(event: FocusEvent<HTMLInputElement, Element>) => {
-			setIsFocusPhone(prev => event)
-			setIsGuide(prev => true)
-		},
-		[]
-	)
+	//eslint-disable-next-line
+	const handleFocusPhone = (event: FocusEvent<HTMLInputElement, Element>) => {
+		setIsFocusPhone(prev => event)
+		setIsGuide(prev => true)
+	}
 	useEffect(() => {
 		if (isFocusPhone) {
 			const value = isFocusPhone.target.value
@@ -104,86 +97,86 @@ export const useContactForm = (parameters: ContactKeys[]) => {
 		}
 	}, [isFocusPhone])
 
-	const handleBlurPhone = useCallback(
-		(event: FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>) => {
-			setTouched(prev => ({ ...prev, [event.target.name]: true }))
-			setIsFocusPhone(prev => null)
+	//eslint-disable-next-line
+	const handleBlurPhone = (
+		event: FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
+	) => {
+		setTouched(prev => ({ ...prev, [event.target.name]: true }))
+		setIsFocusPhone(prev => null)
+		setIsGuide(prev => false)
+		const digitsOnly = phone.replace(/\D/g, '')
+
+		if (digitsOnly.length !== 11) {
+			setIsErrorPhone(true)
+		} else {
+			setIsErrorPhone(false)
+		}
+		if (phone === '+7 (___) ___-__-__' || phone === '') {
+			setPhone('')
 			setIsGuide(prev => false)
-			const digitsOnly = phone.replace(/\D/g, '')
+		} else if (containsAtLeastOneDigit(phone.replace(/_/g, '1'))) {
+			setIsGuide(prev => true)
+		}
+	}
 
-			if (digitsOnly.length !== 11) {
-				setIsErrorPhone(true)
-			} else {
-				setIsErrorPhone(false)
-			}
-			if (phone === '+7 (___) ___-__-__' || phone === '') {
-				setPhone('')
-				setIsGuide(prev => false)
-			} else if (containsAtLeastOneDigit(phone.replace(/_/g, '1'))) {
-				setIsGuide(prev => true)
-			}
-		},
-		[phone]
-	)
+	//eslint-disable-next-line
+	const handleEmailChange = (
+		event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	) => {
+		const newEmail = event.target.value
+		if (validEmail.test(newEmail)) {
+			setIsErrorEmail(false)
+			setMail(newEmail)
+		} else {
+			setMail(newEmail)
+			setIsErrorEmail(true)
+		}
+	}
 
-	const handleEmailChange = useCallback(
-		(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-			const newEmail = event.target.value
-			if (validEmail.test(newEmail)) {
-				setIsErrorEmail(false)
-				setMail(newEmail)
-			} else {
-				setMail(newEmail)
-				setIsErrorEmail(true)
-			}
-		},
-		[]
-	)
+	//eslint-disable-next-line
+	const handleBlurEmail = (
+		event: FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>
+	) => {
+		if (mail === '') {
+			setIsErrorEmail(false)
+		}
+	}
 
-	const handleBlurEmail = useCallback(
-		(event: FocusEvent<HTMLInputElement | HTMLTextAreaElement, Element>) => {
-			if (mail === '') {
-				setIsErrorEmail(false)
-			}
-		},
-		[mail]
-	)
+	//eslint-disable-next-line
+	const handleSquareChange = (
+		event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	) => {
+		const value = event.target.value
+		const regex = /^[0-9]*$/
+		if (regex.test(value) && value.length <= 20) {
+			setSquare(prev => value)
+		}
+	}
 
-	const handleSquareChange = useCallback(
-		(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-			const value = event.target.value
-			const regex = /^[0-9]*$/
-			if (regex.test(value) && value.length <= 20) {
-				setSquare(prev => value)
-			}
-		},
-		[]
-	)
-
-	const handleSelectFootingChange = useCallback((event: SelectChangeEvent) => {
+	//eslint-disable-next-line
+	const handleSelectFootingChange = (event: SelectChangeEvent) => {
 		setFooting(prev => event.target.value as string)
-	}, [])
+	}
 
-	const handleSelectWorkloadsChange = useCallback(
-		(event: SelectChangeEvent) => {
-			setWorkloads(prev => event.target.value as string)
-		},
-		[]
-	)
+	//eslint-disable-next-line
+	const handleSelectWorkloadsChange = (event: SelectChangeEvent) => {
+		setWorkloads(prev => event.target.value as string)
+	}
 
-	const handleNameChange = useCallback(
-		(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-			const newValue = event.target.value
-			const containsOnlyLetters = /^[A-Za-zА-Яа-яЁё\s]*$/.test(newValue)
-			const words = newValue.split(' ').filter(Boolean)
-			if (containsOnlyLetters && words.length <= 3 && newValue.length <= 50) {
-				setName(prev => newValue)
-			}
-		},
-		[]
-	)
+	//eslint-disable-next-line
+	const handleNameChange = (
+		event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	) => {
+		const newValue = event.target.value
+		const containsOnlyLetters = /^[A-Za-zА-Яа-яЁё\s]*$/.test(newValue)
+		const words = newValue.split(' ').filter(Boolean)
+		if (containsOnlyLetters && words.length <= 3 && newValue.length <= 50) {
+			setName(prev => newValue)
+		}
+	}
 
-	const handleAgreeableChange = useCallback(() => {
+	//eslint-disable-next-line
+	const handleAgreeableChange = () => {
 		const values = { name, footing, workloads, square, phone, mail }
 		const allValuesPresent = parameters.every(
 			key => values[key as ContactKeys].trim() !== ''
@@ -191,32 +184,24 @@ export const useContactForm = (parameters: ContactKeys[]) => {
 
 		if (allValuesPresent && !isErrorPhone) {
 			setIsAgreeable(prev => !isAgreeable)
+			console.log(isAgreeable)
 		} else {
 			setIsAgreeable(prev => false)
 		}
-	}, [
-		name,
-		footing,
-		workloads,
-		square,
-		phone,
-		mail,
-		isErrorPhone,
-		isAgreeable,
-		parameters,
-	])
+	}
 
 	useEffect(() => {
 		const values = { name, footing, workloads, square, phone, mail }
 		const allValuesPresent = parameters.every(
 			key => values[key as ContactKeys].trim() !== ''
 		)
-		if (allValuesPresent) {
+		if (!(allValuesPresent && !isErrorPhone)) {
 			setIsAgreeable(prev => false)
 		}
-	}, [square, footing, workloads, name, phone, mail, parameters])
+	}, [name, footing, workloads, square, phone, mail, parameters, isErrorPhone])
 
-	const resetForm = useCallback(() => {
+	//eslint-disable-next-line
+	const resetForm = () => {
 		setTouched({
 			name: null,
 			phone: null,
@@ -236,9 +221,10 @@ export const useContactForm = (parameters: ContactKeys[]) => {
 		setIsErrorPhone(prev => false)
 		setIsErrorEmail(prev => false)
 		setIsGuide(prev => false)
-	}, [])
+	}
 
-	const onSendMessage = useCallback(async () => {
+	//eslint-disable-next-line
+	const onSendMessage = async () => {
 		setIsLoading(prev => true)
 		try {
 			const data: IFormData = createDataObject({
@@ -269,7 +255,7 @@ export const useContactForm = (parameters: ContactKeys[]) => {
 		} finally {
 			setIsLoading(prev => false)
 		}
-	}, [file, footing, mail, name, phone, resetForm, square, workloads])
+	}
 
 	return useMemo(
 		() => ({
