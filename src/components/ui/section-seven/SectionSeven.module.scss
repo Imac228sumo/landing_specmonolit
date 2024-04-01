@@ -246,20 +246,50 @@
 
 						.сheckbox {
 							margin-bottom: 5px;
-							span {
-								font-family: var(--font-raleway);
-								font-weight: 500;
-								font-size: 14px;
-								line-height: 114%;
-								color: #000;
+							> label {
+								> span:last-child {
+									> span,
+									> a {
+										font-family: var(--font-raleway);
+										font-weight: 500;
+										font-size: 14px;
+										line-height: 114%;
+										color: #000;
+									}
+
+									> a {
+										transition: color 0.2s ease-in-out;
+										text-decoration: underline;
+
+										@media (hover: hover) {
+											&:hover {
+												color: #0064fa;
+											}
+										}
+
+										@media (hover: none) {
+											&:active {
+												color: #0064fa;
+											}
+										}
+									}
+								}
 							}
 
 							@media (max-width: 480px) {
 								margin-bottom: calc(
 									0px + (5 + 5 * 3) * ((100vw - 360px) / 480)
 								);
-								span {
-									font-size: calc(12px + (2 + 2 * 3) * ((100vw - 360px) / 480));
+
+								> label {
+									> span:last-child {
+										> span,
+										> a {
+											font-size: calc(
+												12px + (2 + 2 * 3) * ((100vw - 360px) / 480)
+											);
+										}
+									}
 								}
 							}
 						}

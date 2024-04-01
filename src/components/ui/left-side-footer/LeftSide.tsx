@@ -25,7 +25,7 @@ export default function LeftSide() {
 				>
 					Политика конфиденциальности
 				</Link>
-				<span>ИП Самолов С.C</span>
+				<span>{'ООО "МонолитУрал"'}</span>
 			</section>
 		</section>
 	)

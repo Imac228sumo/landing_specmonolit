@@ -15,6 +15,7 @@ import Select from '@mui/material/Select'
 import TextField from '@mui/material/TextField'
 import { styled } from '@mui/material/styles'
 import cn from 'classnames'
+import Link from 'next/link'
 import MaskedInput from 'react-text-mask'
 
 import styles from './SectionSeven.module.scss'
@@ -324,7 +325,7 @@ export default function SectionSeven() {
 									/>
 								</Button>
 
-								<FormControl className={styles.сheckbox}>
+								{/* <FormControl className={styles.сheckbox}>
 									<FormControlLabel
 										control={
 											<Checkbox
@@ -339,6 +340,31 @@ export default function SectionSeven() {
 											/>
 										}
 										label='Согласен с обработкой персональных данных'
+									/>
+								</FormControl> */}
+
+								<FormControl className={styles.сheckbox}>
+									<FormControlLabel
+										control={
+											<Checkbox
+												role='button'
+												aria-label='Согласен с обработкой персональных данных'
+												color='default'
+												icon={<RadioButtonUncheckedIcon />}
+												checkedIcon={<RadioButtonCheckedIcon />}
+												checked={isAgreeable}
+												onChange={handleAgreeableChange}
+												name='isAgreeable'
+											/>
+										}
+										label={
+											<>
+												<span>Согласен с </span>
+												<Link href='/policy'>
+													обработкой персональных данных
+												</Link>
+											</>
+										}
 									/>
 								</FormControl>
 
