@@ -1,13 +1,20 @@
 import Link from 'next/link'
+// import LogoMediumSvg from '@/components/elements/site-logo-svg/LogoMediumSvg'
+import React, { Suspense } from 'react'
 
 import styles from './LeftSide.module.scss'
-import LogoMediumSvg from '@/components/elements/site-logo-svg/LogoMediumSvg'
+
+const LazyLogoMediumSvg = React.lazy(
+	() => import('@/components/elements/site-logo-svg/LogoMediumSvg')
+)
 
 export default function LeftSide() {
 	return (
 		<section className={styles.wrapper}>
 			<section>
-				<LogoMediumSvg />
+				<Suspense>
+					<LazyLogoMediumSvg />
+				</Suspense>
 				<h3 title='МОНОЛИТУРАЛ'>МОНОЛИТУРАЛ</h3>
 			</section>
 			<section>

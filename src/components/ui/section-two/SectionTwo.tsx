@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 import styles from './SectionTwo.module.scss'
 import {
@@ -15,35 +15,35 @@ import { scrollTo } from '@/utils/scroll-to/scrollTo'
 
 export default function SectionTwo({ handleOpen }: { handleOpen: () => void }) {
 	return (
-		<motion.section
+		<m.section
 			initial='hidden'
 			whileInView={'visible'}
 			viewport={{ once: true, amount: 0.2 }}
 			className={styles.wrapper}
 		>
 			<div className={styles.content}>
-				<motion.div onClick={() => handleOpen()}>
+				<m.div onClick={() => handleOpen()}>
 					<span>
-						<motion.h4 custom={6} variants={textAnimationLeft}>
+						<m.h4 custom={6} variants={textAnimationLeft}>
 							Оставить заявку
-						</motion.h4>
-						<motion.span custom={6} variants={textAnimationRight}>
+						</m.h4>
+						<m.span custom={6} variants={textAnimationRight}>
 							<ArrowBigSvg color='white' />
-						</motion.span>
+						</m.span>
 					</span>
-					<motion.p custom={6} variants={textAnimationLeft}>
+					<m.p custom={6} variants={textAnimationLeft}>
 						Рассчитаем стоимость для <br /> вашего объекта
-					</motion.p>
-				</motion.div>
+					</m.p>
+				</m.div>
 				<div>
 					<div>
-						<motion.h5 custom={6} variants={textAnimationBottom}>
+						<m.h5 custom={6} variants={textAnimationBottom}>
 							Геодезическая съёмка всего объекта, <br /> нашими специалистами в
 							подарок
-						</motion.h5>
+						</m.h5>
 					</div>
-					<motion.div custom={7} variants={textAnimationBottom}>
-						<motion.button
+					<m.div custom={7} variants={textAnimationBottom}>
+						<m.button
 							role={'button'}
 							aria-label='Рассчитать стоимость'
 							onClick={() => scrollTo('section_seven')}
@@ -54,10 +54,10 @@ export default function SectionTwo({ handleOpen }: { handleOpen: () => void }) {
 							<span>
 								Рассчитать стоимость <ArrowRightSmallSvg color='white' />
 							</span>
-						</motion.button>
-					</motion.div>
+						</m.button>
+					</m.div>
 				</div>
 			</div>
-		</motion.section>
+		</m.section>
 	)
 }

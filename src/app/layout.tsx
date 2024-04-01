@@ -5,6 +5,8 @@ import { Manrope, Raleway } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 
 import '@/assets/styles/globals.scss'
+import SmoothScrolling from '@/components/ui/smooth-scrolling/SmoothScrolling'
+import { BASE_URL } from '@/config/api.config'
 
 const raleway = Raleway({
 	subsets: ['latin', 'cyrillic'],
@@ -21,8 +23,6 @@ const manrope = Manrope({
 	display: 'swap',
 	variable: '--font-manrope',
 })
-
-const BASE_URL = process.env.REACT_APP_URL || 'https://localhost:3000'
 
 export const metadata: Metadata = {
 	metadataBase: new URL(BASE_URL),
@@ -66,7 +66,7 @@ export default function RootLayout({
 			<body
 				className={cn(raleway.variable, raleway.className, manrope.variable)}
 			>
-				{children}
+				<SmoothScrolling>{children}</SmoothScrolling>
 				<Toaster position='top-center' />
 			</body>
 			<GoogleAnalytics gaId={process.env.REACT_APP_GA_MEASUREMENT_ID || ''} />

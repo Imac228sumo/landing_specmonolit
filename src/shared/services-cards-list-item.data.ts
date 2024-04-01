@@ -1,9 +1,9 @@
 import { IServicesCards } from './services-cards-list-item.interface'
-import imgFive from '@/assets/images/cards/card_five.jpg'
-import imgFour from '@/assets/images/cards/card_four.jpg'
-import imgOne from '@/assets/images/cards/card_one.jpg'
-import imgThree from '@/assets/images/cards/card_three.jpg'
-import imgTwo from '@/assets/images/cards/card_two.jpg'
+import imgFive from '@/assets/images/cards/card_five.webp'
+import imgFour from '@/assets/images/cards/card_four.webp'
+import imgOne from '@/assets/images/cards/card_one.webp'
+import imgThree from '@/assets/images/cards/card_three.webp'
+import imgTwo from '@/assets/images/cards/card_two.webp'
 
 export const servicesCardsList: IServicesCards = {
 	items: [

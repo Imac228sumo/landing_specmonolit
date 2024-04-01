@@ -1,9 +1,11 @@
 'use client'
 
+import React, { Suspense } from 'react'
+
 import styles from './RightSide.module.scss'
-import InstagramLogoSvg from '@/components/elements/instagram-logo-svg/InstagramLogoSvg'
-import MailLogoSvg from '@/components/elements/mail-logo-svg/MailLogoSvg'
-import TelegramLogoSvg from '@/components/elements/telegram-logo-svg/TelegramLogoSvg'
+// import InstagramLogoSvg from '@/components/elements/instagram-logo-svg/InstagramLogoSvg'
+// import MailLogoSvg from '@/components/elements/mail-logo-svg/MailLogoSvg'
+// import TelegramLogoSvg from '@/components/elements/telegram-logo-svg/TelegramLogoSvg'
 import { formattedPhone } from '@/utils/formatted-phone/formattedPhone'
 import {
 	getEmail,
@@ -12,6 +14,16 @@ import {
 	getTelegram,
 } from '@/utils/get-env/getEnv'
 import { scrollTo } from '@/utils/scroll-to/scrollTo'
+
+const LazyInstagramLogoSvg = React.lazy(
+	() => import('@/components/elements/instagram-logo-svg/InstagramLogoSvg')
+)
+const LazyMailLogoSvg = React.lazy(
+	() => import('@/components/elements/mail-logo-svg/MailLogoSvg')
+)
+const LazyTelegramLogoSvg = React.lazy(
+	() => import('@/components/elements/telegram-logo-svg/TelegramLogoSvg')
+)
 
 export default function RightSide() {
 	return (
@@ -98,17 +110,23 @@ export default function RightSide() {
 				<ul>
 					<li>
 						<a role={'link'} aria-label='Телеграм' href={getTelegram() || ''}>
-							<TelegramLogoSvg />
+							<Suspense>
+								<LazyTelegramLogoSvg />
+							</Suspense>
 						</a>
 					</li>
 					<li>
 						<a role={'link'} aria-label='Почта' href={`mailto:${getEmail()}`}>
-							<MailLogoSvg />
+							<Suspense>
+								<LazyMailLogoSvg />
+							</Suspense>
 						</a>
 					</li>
 					<li>
 						<a role={'link'} aria-label='Инстаграм' href={getInstagram() || ''}>
-							<InstagramLogoSvg />
+							<Suspense>
+								<LazyInstagramLogoSvg />
+							</Suspense>
 						</a>
 					</li>
 				</ul>

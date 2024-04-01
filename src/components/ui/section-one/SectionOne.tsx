@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 import styles from './SectionOne.module.scss'
 import { buttonAnimation, textAnimationTop } from '@/animations/animations'
@@ -9,7 +9,7 @@ import ArrowSmallSvg from '@/components/elements/arrow/ArrowSmallSvg'
 export default function SectionOne({ handleOpen }: { handleOpen: () => void }) {
 	const animation = textAnimationTop
 	return (
-		<motion.section
+		<m.section
 			initial='hidden'
 			whileInView={'visible'}
 			viewport={{ once: true }}
@@ -105,41 +105,37 @@ export default function SectionOne({ handleOpen }: { handleOpen: () => void }) {
 
 			<div className={styles.content}>
 				<div>
-					<motion.h3 custom={4} variants={animation}>
+					<m.h3 custom={4} variants={animation}>
 						Строительная компания
-					</motion.h3>
-					<motion.h1 custom={3} variants={animation}>
+					</m.h3>
+					<m.h1 custom={3} variants={animation}>
 						<b>МОНОЛИТ</b>УРАЛ
-					</motion.h1>
+					</m.h1>
 				</div>
 				<div>
-					<motion.h3 custom={2} variants={animation}>
+					<m.h3 custom={2} variants={animation}>
 						Мы создаем промышленные полы для вас
-					</motion.h3>
+					</m.h3>
 				</div>
-				<motion.div
+				<m.div
 					variants={animation}
 					custom={1}
 					onClick={() => handleOpen()}
 					role={'button'}
 					aria-label='Оставить заявку'
 				>
-					<motion.div
-						variants={buttonAnimation}
-						whileHover='hover'
-						whileTap={'tap'}
-					>
-						<motion.span>
+					<m.div variants={buttonAnimation} whileHover='hover' whileTap={'tap'}>
+						<m.span>
 							<h4 title='Оставить заявку'>Оставить заявку</h4>
 							<ArrowSmallSvg />
-						</motion.span>
+						</m.span>
 
-						<motion.p>
+						<m.p>
 							Рассчитаем стоимость для <br /> вашего объекта
-						</motion.p>
-					</motion.div>
-				</motion.div>
+						</m.p>
+					</m.div>
+				</m.div>
 			</div>
-		</motion.section>
+		</m.section>
 	)
 }

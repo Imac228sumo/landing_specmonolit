@@ -1,7 +1,7 @@
 'use client'
 
 import cn from 'classnames'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { forwardRef } from 'react'
 
 import styles from './BlackCardsGalleryItem.module.scss'
@@ -19,7 +19,7 @@ const BlackCardsGalleryItem = forwardRef<
 	BlackCardsGalleryItemProps
 >(({ item }, ref) => {
 	return (
-		<motion.div
+		<m.div
 			onClick={() => scrollTo(item.href)}
 			ref={ref}
 			className={cn(styles.item, {
@@ -38,10 +38,10 @@ const BlackCardsGalleryItem = forwardRef<
 				</div>
 				<p>{item.title}</p>
 			</button>
-		</motion.div>
+		</m.div>
 	)
 })
 
-export const MBlackCardsGalleryItem = motion(BlackCardsGalleryItem)
+export const MBlackCardsGalleryItem = m(BlackCardsGalleryItem)
 export default BlackCardsGalleryItem
 BlackCardsGalleryItem.displayName = 'BlackCardsGalleryItem'

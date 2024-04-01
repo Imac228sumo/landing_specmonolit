@@ -1,5 +1,6 @@
 'use client'
 
+import { LazyMotion, domAnimation } from 'framer-motion'
 import { useState } from 'react'
 
 import styles from './Home.module.scss'
@@ -22,17 +23,20 @@ export default function Home() {
 	const handleClose = () => {
 		setOpen(false)
 	}
+
 	return (
-		<div className={styles.wrapper}>
-			<SectionOne handleOpen={handleOpen} />
-			<SectionTwo handleOpen={handleOpen} />
-			<SectionThree />
-			<SectionFour />
-			<SectionFive handleOpen={handleOpen} />
-			<SectionSix />
-			<SectionSeven />
-			<SectionEight />
-			<ModalWindow handleClose={handleClose} open={open} />
-		</div>
+		<LazyMotion features={domAnimation}>
+			<div className={styles.wrapper}>
+				<SectionOne handleOpen={handleOpen} />
+				<SectionTwo handleOpen={handleOpen} />
+				<SectionThree />
+				<SectionFour />
+				<SectionFive handleOpen={handleOpen} />
+				<SectionSix />
+				<SectionSeven />
+				<SectionEight />
+				<ModalWindow handleClose={handleClose} open={open} />
+			</div>
+		</LazyMotion>
 	)
 }

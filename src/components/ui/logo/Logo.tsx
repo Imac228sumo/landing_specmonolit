@@ -1,7 +1,12 @@
 import Link from 'next/link'
+// import LogoSmallSvg from '@/components/elements/site-logo-svg/LogoSmallSvg'
+import React, { Suspense } from 'react'
 
 import styles from './Logo.module.scss'
-import LogoSmallSvg from '@/components/elements/site-logo-svg/LogoSmallSvg'
+
+const LazyLogoSmallSvg = React.lazy(
+	() => import('@/components/elements/site-logo-svg/LogoSmallSvg')
+)
 
 export default function Logo() {
 	return (
@@ -11,7 +16,9 @@ export default function Logo() {
 			href={'/'}
 			className={styles.logo}
 		>
-			<LogoSmallSvg />
+			<Suspense>
+				<LazyLogoSmallSvg />
+			</Suspense>
 			<p>
 				<b>МОНОЛИТ</b>УРАЛ
 			</p>

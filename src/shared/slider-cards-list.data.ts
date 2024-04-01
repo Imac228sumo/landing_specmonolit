@@ -1,10 +1,10 @@
 import { ISlide } from './slider-cards-list.interface'
-import imgFive from '@/assets/images/slides/slide_five.jpg'
-import imgFour from '@/assets/images/slides/slide_four.jpg'
-import imgOne from '@/assets/images/slides/slide_one.jpg'
-import imgSix from '@/assets/images/slides/slide_six.jpg'
-import imgThree from '@/assets/images/slides/slide_three.jpg'
-import imgTwo from '@/assets/images/slides/slide_two.jpg'
+import imgFive from '@/assets/images/slides/slide_five.webp'
+import imgFour from '@/assets/images/slides/slide_four.webp'
+import imgOne from '@/assets/images/slides/slide_one.webp'
+import imgSix from '@/assets/images/slides/slide_six.webp'
+import imgThree from '@/assets/images/slides/slide_three.webp'
+import imgTwo from '@/assets/images/slides/slide_two.webp'
 
 export const slides: ISlide[] = [
 	{

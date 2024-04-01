@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { Paper } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import cn from 'classnames'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import Image from 'next/image'
 import { forwardRef } from 'react'
 
@@ -66,7 +66,7 @@ const ServicesCardsGalleryItem = forwardRef<
 								src={item.image}
 								fill
 								draggable={false}
-								priority
+								loading='lazy'
 								sizes='100%'
 							/>
 							<div className={styles.content}>
@@ -104,6 +104,6 @@ const ServicesCardsGalleryItem = forwardRef<
 	)
 })
 
-export const MServicesCardsGalleryItem = motion(ServicesCardsGalleryItem)
+export const MServicesCardsGalleryItem = m(ServicesCardsGalleryItem)
 export default ServicesCardsGalleryItem
 ServicesCardsGalleryItem.displayName = 'ServicesCardsGalleryItem'

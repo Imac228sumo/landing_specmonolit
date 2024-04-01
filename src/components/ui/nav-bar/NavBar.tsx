@@ -1,10 +1,8 @@
 'use client'
 
-import Box from '@mui/material/Box'
 import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
 import { styled } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import { SyntheticEvent, useState } from 'react'
 
 import styles from './NavBar.module.scss'
@@ -22,26 +20,6 @@ const CustomTabs = styled(Tabs)({
 		height: '4px',
 	},
 })
-
-/*
-
-@media (hover: hover) {
-			&:hover {
-				> svg {
-					opacity: 0.75;
-				}
-			}
-		}
-
-		@media (hover: none) {
-			&:active  {
-				> svg {
-					opacity: 0.75;
-				}
-			}
-		}
-
-*/
 
 const CustomTab = styled((props: StyledTabProps) => (
 	<Tab disableRipple {...props} />
@@ -78,7 +56,7 @@ const CustomTab = styled((props: StyledTabProps) => (
 }))
 
 export default function NavBar() {
-	const matches = useMediaQuery('(min-width:891px)')
+	// const matches = useMediaQuery('(min-width:891px)')
 	const [value, setValue] = useState(routes[0].href)
 
 	const handleChange = (event: SyntheticEvent, newValue: string) => {
@@ -88,28 +66,26 @@ export default function NavBar() {
 
 	return (
 		<>
-			{matches ? (
-				<Box>
-					<CustomTabs
-						value={value}
-						onChange={handleChange}
-						aria-label='navigation'
-						role={'navigation'}
-						className={styles.custom_tabs}
-					>
-						{routes.map((route, index) => {
-							return (
-								<CustomTab
-									aria-label={`Перейти к ${route.title}`}
-									value={route.href}
-									label={route.title}
-									key={index}
-								/>
-							)
-						})}
-					</CustomTabs>
-				</Box>
-			) : null}
+			<div className={styles.wrapper}>
+				<CustomTabs
+					value={value}
+					onChange={handleChange}
+					aria-label='navigation'
+					role={'navigation'}
+					className={styles.custom_tabs}
+				>
+					{routes.map((route, index) => {
+						return (
+							<CustomTab
+								aria-label={`Перейти к ${route.title}`}
+								value={route.href}
+								label={route.title}
+								key={index}
+							/>
+						)
+					})}
+				</CustomTabs>
+			</div>
 		</>
 	)
 }

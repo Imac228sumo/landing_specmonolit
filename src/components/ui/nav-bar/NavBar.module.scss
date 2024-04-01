@@ -1,3 +1,11 @@
+.wrapper {
+	display: inline-block;
+
+	@media (max-width: 890px) {
+		display: none;
+	}
+}
+
 .custom_tabs {
 	button {
 		font-family: var(--font-raleway);

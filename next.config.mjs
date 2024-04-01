@@ -4,7 +4,7 @@ import MillionLint from '@million/lint'
 const nextConfig = {
 	reactStrictMode: true,
 	poweredByHeader: false,
-	optimizeFonts: false,
+	optimizeFonts: true,
 	env: {
 		APP_EMAIL_USER: process.env.REACT_APP_EMAIL_USER,
 		APP_PHONE_USER: process.env.REACT_APP_PHONE_USER,

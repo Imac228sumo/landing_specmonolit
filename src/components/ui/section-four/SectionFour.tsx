@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 import { MBlackCardsGalleryItem } from '../black-cards-gallery-item/BlackCardsGalleryItem'
 
@@ -33,7 +33,7 @@ const cardAnimationRight = {
 
 export default function SectionFour() {
 	return (
-		<motion.section
+		<m.section
 			initial='hidden'
 			whileInView={'visible'}
 			viewport={{ amount: 0.2, once: true }}
@@ -42,9 +42,9 @@ export default function SectionFour() {
 			<div className={styles.content}>
 				<div className={styles.container}>
 					<section>
-						<motion.section custom={2} variants={cardAnimationLeft}>
+						<m.section custom={2} variants={cardAnimationLeft}>
 							<span>15</span>
-						</motion.section>
+						</m.section>
 						<section>
 							<MBlackCardsGalleryItem
 								custom={2}
@@ -83,6 +83,6 @@ export default function SectionFour() {
 					</section>
 				</div>
 			</div>
-		</motion.section>
+		</m.section>
 	)
 }

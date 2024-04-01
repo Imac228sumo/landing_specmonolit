@@ -1,4 +1,3 @@
-@import '@/assets/styles/animations';
 @import '@/assets/styles/variables';
 
 .overlay {
@@ -17,11 +16,18 @@
 	animation: fade 0.5s ease-in-out;
 
 	&.active {
-		display: inline;
+		@media (max-width: 890px) {
+			display: inline;
+		}
 	}
 }
 
 .mobile_menu {
+	display: none;
+	@media (max-width: 890px) {
+		display: inline;
+	}
+
 	> div:first-child {
 		left: -8px;
 	}

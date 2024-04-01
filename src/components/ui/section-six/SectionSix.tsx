@@ -41,9 +41,10 @@ export default function SectionSix() {
 						<div className={styles.text}>
 							<Typography className={styles.title}>Проекты компании</Typography>
 							<Typography className={styles.caption}>
-								Наша компания выполняет заказы на самых крупных предприятиях
-								России <br /> Наша компания выполняет заказы на самых крупных
-								предприятиях России:
+								Компания МОНОЛИТУРАЛ имеет за плечами многолетний опыт
+								сотрудничества с фундоментальными предприятиями и компаниями
+								нашей страны, в их число входят: РМК, Союз пищепром, МЧС России
+								и многие другие. Мы отвечаем за качество нашей работы!
 							</Typography>
 						</div>
 						{is999 && <SlideButtons swiperRef={swiperRef} />}
@@ -94,8 +95,8 @@ export default function SectionSix() {
 											src={slide.image}
 											fill={true}
 											draggable={false}
-											priority
 											sizes='100%'
+											loading='lazy'
 										/>
 										<Box className={styles.media_information}>
 											<Typography

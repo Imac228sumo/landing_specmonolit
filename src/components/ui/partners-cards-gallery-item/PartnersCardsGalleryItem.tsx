@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { Paper } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import cn from 'classnames'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import Image from 'next/image'
 import { FC } from 'react'
 
@@ -49,14 +49,14 @@ const PartnersCardsGalleryItem: FC<{ item: IPartnersCardItem }> = ({
 			laptop={1}
 			desktop={1}
 		>
-			<motion.div
+			<m.div
 				layout
 				animate={{ opacity: 1 }}
 				initial={{ opacity: 0 }}
 				exit={{ opacity: 0 }}
 			>
 				<ServicesCardsItem className={cn(styles.item)}>
-					<motion.div>
+					<m.div>
 						<Image
 							title={item.seoTitle}
 							about={item.seoTitle}
@@ -64,13 +64,13 @@ const PartnersCardsGalleryItem: FC<{ item: IPartnersCardItem }> = ({
 							src={item.image}
 							fill
 							draggable={false}
-							priority
 							sizes='41%'
+							loading='lazy'
 						/>
 						{item.title && <div className={styles.title}>{item.title}</div>}
-					</motion.div>
+					</m.div>
 				</ServicesCardsItem>
-			</motion.div>
+			</m.div>
 		</ResponsiveGrid>
 	)
 }

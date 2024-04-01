@@ -1,9 +1,9 @@
 'use client'
 
-import { Box } from '@mui/material'
+import { Box, useMediaQuery } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 import { MServicesCardsGalleryItem } from '../services-cards-gallery-item/ServicesCardsGalleryItem'
 
@@ -61,18 +61,19 @@ export default function SectionFive({
 }: {
 	handleOpen: () => void
 }) {
+	const is1024 = useMediaQuery('(max-width:1024px)')
+
 	return (
-		<motion.section
+		<m.section
 			id='section_five'
 			initial='hidden'
 			whileInView={'visible'}
-			viewport={{ amount: 0.2, once: true }}
+			viewport={{ amount: 0, once: true }}
 			className={styles.wrapper}
 		>
 			<div className={styles.content}>
-				<motion.h1 custom={1} variants={textAnimation}>
-					наши Услуги
-				</motion.h1>
+				{/* variants={is1024 ? textAnimation : undefined} */}
+				<m.h1 custom={1}>наши Услуги</m.h1>
 				<Box style={{ flexGrow: 1 }}>
 					<ThemeProvider
 						theme={createTheme({
@@ -106,7 +107,7 @@ export default function SectionFive({
 									<MServicesCardsGalleryItem
 										handleOpen={handleOpen}
 										custom={index / 5}
-										variants={cardAnimationLeft}
+										// variants={is1024 ? cardAnimationLeft : undefined}
 										viewport={{ once: true }}
 										initial='hidden'
 										whileInView={'visible'}
@@ -122,6 +123,6 @@ export default function SectionFive({
 					</ThemeProvider>
 				</Box>
 			</div>
-		</motion.section>
+		</m.section>
 	)
 }
