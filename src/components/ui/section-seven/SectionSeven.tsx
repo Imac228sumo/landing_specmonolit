@@ -325,24 +325,6 @@ export default function SectionSeven() {
 									/>
 								</Button>
 
-								{/* <FormControl className={styles.сheckbox}>
-									<FormControlLabel
-										control={
-											<Checkbox
-												role='button'
-												aria-label='Согласен с обработкой персональных данных'
-												color='default'
-												icon={<RadioButtonUncheckedIcon />}
-												checkedIcon={<RadioButtonCheckedIcon />}
-												checked={isAgreeable}
-												onChange={handleAgreeableChange}
-												name='isAgreeable'
-											/>
-										}
-										label='Согласен с обработкой персональных данных'
-									/>
-								</FormControl> */}
-
 								<FormControl className={styles.сheckbox}>
 									<FormControlLabel
 										control={

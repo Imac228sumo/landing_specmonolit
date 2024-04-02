@@ -25,7 +25,7 @@ export default function LeftSide() {
 				>
 					Политика конфиденциальности
 				</Link>
-				<span>{'ООО "МонолитУрал"'}</span>
+				<span>{'ООО "МОНОЛИТУРАЛ"'}</span>
 			</section>
 		</section>
 	)

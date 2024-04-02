@@ -8,7 +8,7 @@ import imgTwo from '@/assets/images/slides/slide_two.webp'
 
 export const slides: ISlide[] = [
 	{
-		title: 'УСТАНОВКА полов на “ЧКПЗ”',
+		title: 'УСТРОЙСТВО полов на “ЧКПЗ”',
 		caption: 'Общая площадь 1200 м²',
 		image: imgOne,
 		key: 'Slide 1',
@@ -24,7 +24,7 @@ export const slides: ISlide[] = [
 		seoTitle: 'Пол рассчитать стоимость',
 	},
 	{
-		title: 'УСТАНОВКА полов для',
+		title: 'УСТРОЙСТВО полов для',
 		subTitle: 'АО “Почта России”',
 		image: imgTwo,
 		key: 'Slide 3',
@@ -32,7 +32,7 @@ export const slides: ISlide[] = [
 		seoTitle: 'Наливной пол сколько',
 	},
 	{
-		title: 'УСТАНОВКА пола для',
+		title: 'УСТРОЙСТВО пола для',
 		subTitle: 'ооо “люкс вода”',
 		image: imgFour,
 		key: 'Slide 4',
@@ -40,7 +40,7 @@ export const slides: ISlide[] = [
 		seoTitle: 'Жидкий пол заказать',
 	},
 	{
-		title: 'УСТАНОВКА полов для',
+		title: 'УСТРОЙСТВО полов для',
 		subTitle: 'пао “ЧЕЛИНДБАНК”',
 		image: imgFive,
 		key: 'Slide 5',
@@ -48,7 +48,7 @@ export const slides: ISlide[] = [
 		seoTitle: 'Залить пол цена',
 	},
 	{
-		title: 'УСТАНОВКА пола для',
+		title: 'УСТРОЙСТВО пола для',
 		subTitle: 'ао “Русская Медная Компания”',
 		image: imgSix,
 		key: 'Slide 6',

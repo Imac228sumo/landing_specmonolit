@@ -2,10 +2,12 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import cn from 'classnames'
 import type { Metadata } from 'next'
 import { Manrope, Raleway } from 'next/font/google'
+import { Suspense } from 'react'
 import { Toaster } from 'react-hot-toast'
 
 import '@/assets/styles/globals.scss'
 import SmoothScrolling from '@/components/ui/smooth-scrolling/SmoothScrolling'
+import { Metrika } from '@/components/yandex-metrika/YandexMetrica'
 import { BASE_URL } from '@/config/api.config'
 
 const raleway = Raleway({
@@ -68,7 +70,11 @@ export default function RootLayout({
 			>
 				<SmoothScrolling>{children}</SmoothScrolling>
 				<Toaster position='top-center' />
+				<Suspense>
+					<Metrika />
+				</Suspense>
 			</body>
+
 			<GoogleAnalytics gaId={process.env.REACT_APP_GA_MEASUREMENT_ID || ''} />
 		</html>
 	)
